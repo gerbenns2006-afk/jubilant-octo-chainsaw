@@ -24,3 +24,7 @@
 @media(max-width:500px){.page-hero{padding:60px 0}.modeling-body,.modeling-pipeline,.founder-page,.founder-preview{padding:65px 0}.modeling-layers article{padding:22px}}
 
 /* ONQIVA production bundle 2026-08-04 */
+
+.action-guide{margin-top:16px;padding-top:15px;border-top:1px solid #9faf62}.action-guide>b,.saved-questions>b{font-size:10px;letter-spacing:.08em}.action-guide p{display:flex;align-items:flex-start;gap:10px;margin:10px 0;font-size:11px;line-height:1.5}.action-guide p span{flex:0 0 21px;height:21px;border-radius:50%;display:grid;place-items:center;background:var(--green);color:var(--mint);font-size:9px;font-weight:700}
+@media(max-width:800px){.nav{height:auto;min-height:76px;flex-wrap:wrap;padding:16px 0}.navlinks{display:flex;order:3;width:100%;gap:8px;overflow-x:auto;padding:13px 0 2px;scrollbar-width:none;border-top:1px solid var(--line);margin-top:14px}.navlinks::-webkit-scrollbar{display:none}.navlinks a{flex:0 0 auto;white-space:nowrap;padding:9px 13px;border-radius:30px;background:#e9efe6;color:var(--green);font-size:12px}.navlinks a.active-link{background:var(--green);color:#fff}.nav-cta{margin-left:auto}.page-hero{padding-top:55px}}
+@media(max-width:500px){.nav-cta{display:block;padding:10px 13px;font-size:11px}.brand{font-size:17px}.navlinks{margin-top:12px}.snapshot-grid p{padding:10px}.saved-questions p,.action-guide p{font-size:12px}}
