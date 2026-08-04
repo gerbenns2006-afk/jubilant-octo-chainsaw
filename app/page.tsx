@@ -88,14 +88,14 @@ export default function Home() {
             <div className="pathway-copy">
               <div className="kicker">{contextMode === "family" ? "FAMILY HISTORY & ELEVATED CONCERN" : "GENERAL HEALTH & PREVENTION"}</div>
               <h3>{contextMode === "family" ? "Turn concern into a clearer conversation." : "Build the foundations that support long-term health."}</h3>
-              <p>{contextMode === "family" ? "Family history can be important, but it is not a diagnosis. This pathway helps visitors organize relevant information before speaking with a qualified professional." : "This pathway connects vitamin D with its established roles in calcium absorption and bone health while emphasizing balanced, practical habits."}</p>
+              <p>{contextMode === "family" ? "This pathway helps visitors organize family patterns, personal health context, and focused questions for a more productive conversation with a qualified professional." : "This pathway connects vitamin D with its established roles in calcium absorption and bone health while emphasizing balanced, practical habits."}</p>
               <a href={contextMode === "family" ? "mailto:sciencelecturesyt@gmail.com?subject=ONQIVA%20family-history%20pathway" : "#evidence"}>{contextMode === "family" ? "Help shape this pathway →" : "Explore the evidence →"}</a>
             </div>
             <div className="pathway-panel">
               <span>{contextMode === "family" ? "CONVERSATION BUILDER" : "WELLNESS FOUNDATIONS"}</span>
               <h4>{contextMode === "family" ? "Information worth organizing" : "A practical starting point"}</h4>
               <ul>{contextMode === "family" ? <><li>Which relatives were affected and at what ages</li><li>Personal symptoms, diagnoses, and bone-health concerns</li><li>Current medications and supplement use</li><li>Any known vitamin D measurements</li><li>Questions about screening or genetic counseling</li></> : <><li>Vitamin-D-containing foods and overall dietary pattern</li><li>Safe outdoor activity balanced with sun protection</li><li>Regular movement and weight-bearing activity</li><li>Life stage, bone-health needs, and relevant medications</li><li>When a clinician believes measurement is appropriate</li></>}</ul>
-              <p className="pathway-note">{contextMode === "family" ? "ONQIVA does not convert family history into a cancer-risk score. A separately validated model would be required for prediction." : "General wellness guidance is educational and does not replace individualized medical care."}</p>
+              <p className="pathway-note">{contextMode === "family" ? "This pathway organizes family-history context for stronger clinical conversations and future research-model development." : "This pathway turns established vitamin D and bone-health principles into clear, practical next steps."}</p>
             </div>
           </div>}
         </div>
