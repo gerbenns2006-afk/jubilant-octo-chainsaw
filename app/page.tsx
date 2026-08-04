@@ -26,6 +26,13 @@ function WellnessToolkit() {
   };
   const amount = Number(labelAmount) || 0;
   const convertedAmount = labelUnit === "mcg" ? amount * 40 : amount / 40;
+  const actionSteps = [
+    selectedFoods.length < 2 ? "Choose one additional vitamin-D-containing or fortified food to explore this week." : "Keep rotating the food sources you selected instead of relying on only one option.",
+    outdoorRoutine === "Mostly indoors" ? "Note your usual outdoor routine and ask how season, location, skin protection, and personal health affect your vitamin D conversation." : "Keep outdoor movement balanced with appropriate sun protection for your skin and setting.",
+    movementRoutine === "1–2 days per week" ? "Plan one additional weight-bearing or strengthening session that fits your ability and schedule." : "Maintain your regular movement and weight-bearing routine.",
+    "Bring a photo of any food or supplement label you use so the serving size and vitamin D amount are easy to review."
+  ];
+  const visitQuestions = selectedQuestions.length ? selectedQuestions : wellnessQuestionOptions.slice(0, 3);
 
   return (
     <div className="wellness-toolkit">
@@ -60,9 +67,10 @@ function WellnessToolkit() {
       </div>
 
       <section className="wellness-snapshot" aria-live="polite">
-        <div><span>YOUR SNAPSHOT</span><h4>{selectedFoods.length ? selectedFoods.length + " vitamin D food source" + (selectedFoods.length === 1 ? "" : "s") + " selected" : "Choose your current food sources"}</h4></div>
-        <div className="snapshot-grid"><p><b>Outdoor routine</b>{outdoorRoutine}</p><p><b>Movement</b>{movementRoutine}</p><p><b>Questions saved</b>{selectedQuestions.length}</p></div>
-        {selectedQuestions.length > 0 && <div className="saved-questions"><b>Bring these questions to your next conversation</b>{selectedQuestions.map((question) => <p key={question}>→ {question}</p>)}</div>}
+        <div><span>YOUR VITAMIN D ACTION GUIDE</span><h4>{selectedFoods.length ? selectedFoods.length + " current food source" + (selectedFoods.length === 1 ? "" : "s") + " identified" : "A practical plan for your next week and next checkup"}</h4></div>
+        <div className="snapshot-grid"><p><b>Outdoor routine</b>{outdoorRoutine}</p><p><b>Movement</b>{movementRoutine}</p><p><b>Checkup questions ready</b>{visitQuestions.length}</p></div>
+        <div className="action-guide"><b>Practical next steps</b>{actionSteps.map((step, index) => <p key={step}><span>{index + 1}</span>{step}</p>)}</div>
+        <div className="saved-questions"><b>{selectedQuestions.length ? "Your saved questions for your next checkup" : "Useful questions for your next checkup"}</b>{visitQuestions.map((question) => <p key={question}>→ {question}</p>)}</div>
       </section>
     </div>
   );
