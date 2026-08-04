@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "onqiva-computational-oncology",
+  "main": "dist/server/index.js",
+  "no_bundle": true,
+  "find_additional_modules": true,
+  "base_dir": "dist/server",
+  "compatibility_date": "2026-07-31",
+  "assets": {
+    "directory": "dist/client",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
+  "observability": {
+    "enabled": true
+  },
+  "rules": [
+    { "type": "ESModule", "globs": ["**/*.js"] }
+  ]
+}
