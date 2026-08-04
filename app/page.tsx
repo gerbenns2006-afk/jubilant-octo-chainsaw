@@ -10,6 +10,64 @@ type Result = {
   allocation: { testsUsed: number; prioritizedReached: number; randomReached: number; potentiallyMissed: number };
 };
 
+const wellnessFoodOptions = ["Fatty fish", "Fortified milk", "Fortified plant milk", "Egg yolks", "Fortified cereal", "UV-exposed mushrooms"];
+const wellnessQuestionOptions = ["Should I measure my vitamin D status?", "Could my medications affect vitamin D or bone health?", "What intake fits my age and health history?", "How should I balance outdoor time and sun protection?"];
+
+function WellnessToolkit() {
+  const [outdoorRoutine, setOutdoorRoutine] = useState("Mostly indoors");
+  const [movementRoutine, setMovementRoutine] = useState("1–2 days per week");
+  const [selectedFoods, setSelectedFoods] = useState<string[]>([]);
+  const [selectedQuestions, setSelectedQuestions] = useState<string[]>([]);
+  const [labelAmount, setLabelAmount] = useState("10");
+  const [labelUnit, setLabelUnit] = useState<"mcg" | "IU">("mcg");
+
+  const toggleItem = (item: string, values: string[], setter: (value: string[]) => void) => {
+    setter(values.includes(item) ? values.filter((value) => value !== item) : [...values, item]);
+  };
+  const amount = Number(labelAmount) || 0;
+  const convertedAmount = labelUnit === "mcg" ? amount * 40 : amount / 40;
+
+  return (
+    <div className="wellness-toolkit">
+      <div className="wellness-title"><span>VITAMIN D WELLNESS SNAPSHOT</span><h4>Build your everyday starting point</h4><p>Your selections update the snapshot below.</p></div>
+
+      <div className="wellness-tools">
+        <section className="wellness-tool">
+          <b>01 · ROUTINE BUILDER</b>
+          <label>Typical outdoor routine<select value={outdoorRoutine} onChange={(event) => setOutdoorRoutine(event.target.value)}><option>Mostly indoors</option><option>Some outdoor time</option><option>Regular outdoor time</option></select></label>
+          <label>Movement or weight-bearing activity<select value={movementRoutine} onChange={(event) => setMovementRoutine(event.target.value)}><option>1–2 days per week</option><option>3–4 days per week</option><option>5+ days per week</option></select></label>
+        </section>
+
+        <section className="wellness-tool food-tool">
+          <b>02 · FOOD SOURCE EXPLORER</b>
+          <p>Select sources that are already part of your routine.</p>
+          <div className="wellness-chips">{wellnessFoodOptions.map((food) => <button key={food} className={selectedFoods.includes(food) ? "chosen" : ""} aria-pressed={selectedFoods.includes(food)} onClick={() => toggleItem(food, selectedFoods, setSelectedFoods)}>{food}</button>)}</div>
+        </section>
+
+        <section className="wellness-tool question-tool">
+          <b>03 · BUILD MY QUESTIONS</b>
+          <p>Choose questions to save in your snapshot.</p>
+          <div className="question-options">{wellnessQuestionOptions.map((question) => <label key={question}><input type="checkbox" checked={selectedQuestions.includes(question)} onChange={() => toggleItem(question, selectedQuestions, setSelectedQuestions)} /><span>{question}</span></label>)}</div>
+        </section>
+
+        <section className="wellness-tool label-tool">
+          <b>04 · LABEL READER</b>
+          <p>Convert the vitamin D amount shown on a food or supplement label.</p>
+          <div><input aria-label="Vitamin D label amount" type="number" min="0" value={labelAmount} onChange={(event) => setLabelAmount(event.target.value)} /><select aria-label="Vitamin D label unit" value={labelUnit} onChange={(event) => setLabelUnit(event.target.value as "mcg" | "IU")}><option value="mcg">mcg</option><option value="IU">IU</option></select></div>
+          <strong>{convertedAmount.toLocaleString(undefined, { maximumFractionDigits: 2 })} {labelUnit === "mcg" ? "IU" : "mcg"}</strong>
+          <small>1 mcg vitamin D = 40 IU</small>
+        </section>
+      </div>
+
+      <section className="wellness-snapshot" aria-live="polite">
+        <div><span>YOUR SNAPSHOT</span><h4>{selectedFoods.length ? selectedFoods.length + " vitamin D food source" + (selectedFoods.length === 1 ? "" : "s") + " selected" : "Choose your current food sources"}</h4></div>
+        <div className="snapshot-grid"><p><b>Outdoor routine</b>{outdoorRoutine}</p><p><b>Movement</b>{movementRoutine}</p><p><b>Questions saved</b>{selectedQuestions.length}</p></div>
+        {selectedQuestions.length > 0 && <div className="saved-questions"><b>Bring these questions to your next conversation</b>{selectedQuestions.map((question) => <p key={question}>→ {question}</p>)}</div>}
+      </section>
+    </div>
+  );
+}
+
 export default function Home() {
   const [capacity, setCapacity] = useState(20);
   const [loading, setLoading] = useState(false);
@@ -91,12 +149,12 @@ export default function Home() {
               <p>{contextMode === "family" ? "This pathway helps visitors organize family patterns, personal health context, and focused questions for a more productive conversation with a qualified professional." : "This pathway connects vitamin D with its established roles in calcium absorption and bone health while emphasizing balanced, practical habits."}</p>
               <a href={contextMode === "family" ? "mailto:sciencelecturesyt@gmail.com?subject=ONQIVA%20family-history%20pathway" : "#evidence"}>{contextMode === "family" ? "Help shape this pathway →" : "Explore the evidence →"}</a>
             </div>
-            <div className="pathway-panel">
-              <span>{contextMode === "family" ? "CONVERSATION BUILDER" : "WELLNESS FOUNDATIONS"}</span>
-              <h4>{contextMode === "family" ? "Information worth organizing" : "A practical starting point"}</h4>
-              <ul>{contextMode === "family" ? <><li>Which relatives were affected and at what ages</li><li>Personal symptoms, diagnoses, and bone-health concerns</li><li>Current medications and supplement use</li><li>Any known vitamin D measurements</li><li>Questions about screening or genetic counseling</li></> : <><li>Vitamin-D-containing foods and overall dietary pattern</li><li>Safe outdoor activity balanced with sun protection</li><li>Regular movement and weight-bearing activity</li><li>Life stage, bone-health needs, and relevant medications</li><li>When a clinician believes measurement is appropriate</li></>}</ul>
-              <p className="pathway-note">{contextMode === "family" ? "This pathway organizes family-history context for stronger clinical conversations and future research-model development." : "This pathway turns established vitamin D and bone-health principles into clear, practical next steps."}</p>
-            </div>
+            {contextMode === "family" ? <div className="pathway-panel">
+              <span>CONVERSATION BUILDER</span>
+              <h4>Information worth organizing</h4>
+              <ul><li>Which relatives were affected and at what ages</li><li>Personal symptoms, diagnoses, and bone-health concerns</li><li>Current medications and supplement use</li><li>Any known vitamin D measurements</li><li>Questions about screening or genetic counseling</li></ul>
+              <p className="pathway-note">This pathway organizes family-history context for stronger clinical conversations and future research-model development.</p>
+            </div> : <WellnessToolkit />}
           </div>}
         </div>
       </section>
