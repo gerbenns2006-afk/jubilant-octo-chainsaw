@@ -45,7 +45,7 @@ export default function Home() {
 
       <section className="prototype" id="prototype">
         <div className="shell">
-          <div className="section-head"><div><div className="kicker">THE ONQIVA PATIENT JOURNEY</div><h2>One patient. One constrained clinic.<br />A clearer testing decision.</h2></div><p>Experience a fictional scenario designed to demonstrate the product logic—not provide medical advice.</p></div>
+          <div className="section-head"><div><div className="kicker">THE ONQIVA PATIENT JOURNEY</div><h2>One patient. One constrained clinic.<br />A clearer testing decision.</h2></div><p>Explore how ONQIVA turns patient context and clinic capacity into a transparent, explainable testing-priority workflow.</p></div>
           <div className="demo-grid">
             <article className="patient-card">
               <div className="card-top"><div className="avatar">MS</div><div><span>FICTIONAL SURVIVOR PROFILE</span><h3>Maria Santos, 52</h3><p>Breast cancer survivor · 5 years post-treatment</p></div></div>
@@ -56,7 +56,7 @@ export default function Home() {
             </article>
 
             <article className={`result-card ${result ? "active" : ""}`} aria-live="polite">
-              {!result ? <div className="empty"><div className="pulse"><i /></div><span>AWAITING SIMULATION</span><h3>Transparent by design.</h3><p>Run the fictional profile to see an explainable priority result and a clinic-level allocation comparison.</p></div> : <>
+              {!result ? <div className="empty"><div className="pulse"><i /></div><span>AWAITING SIMULATION</span><h3>Transparent by design.</h3><p>Run the profile to see how individual factors shape an explainable priority score and clinic-level allocation comparison.</p></div> : <>
                 <div className="result-label">SIMULATED OUTPUT</div>
                 <div className="score-row"><div className="score-ring" style={{"--score": `${result.score * 3.6}deg`} as React.CSSProperties}><div><strong>{result.score}</strong><small>/ 100</small></div></div><div><span className="priority">{result.priority}</span><h3>Consider for confirmatory testing</h3><p>This score ranks a fictional profile; it does not estimate a diagnosis.</p></div></div>
                 <div className="factor-list"><span>Leading simulated contributors</span>{result.factors.map((factor) => <div key={factor.label}><i /><p>{factor.label}</p><b>+{factor.points}</b></div>)}</div>
