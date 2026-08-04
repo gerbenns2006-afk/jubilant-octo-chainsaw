@@ -26,13 +26,54 @@ function WellnessToolkit() {
   };
   const amount = Number(labelAmount) || 0;
   const convertedAmount = labelUnit === "mcg" ? amount * 40 : amount / 40;
-  const actionSteps = [
-    selectedFoods.length < 2 ? "Choose one additional vitamin-D-containing or fortified food to explore this week." : "Keep rotating the food sources you selected instead of relying on only one option.",
-    outdoorRoutine === "Mostly indoors" ? "Note your usual outdoor routine and ask how season, location, skin protection, and personal health affect your vitamin D conversation." : "Keep outdoor movement balanced with appropriate sun protection for your skin and setting.",
-    movementRoutine === "1–2 days per week" ? "Plan one additional weight-bearing or strengthening session that fits your ability and schedule." : "Maintain your regular movement and weight-bearing routine.",
-    "Bring a photo of any food or supplement label you use so the serving size and vitamin D amount are easy to review."
+  const foodStep = selectedFoods.length === 0
+    ? "Start by checking one food you regularly eat for vitamin D on its nutrition label."
+    : selectedFoods.length === 1
+      ? `You selected ${selectedFoods[0]}. Explore one different food source so your routine does not depend on a single option.`
+      : selectedFoods.length <= 3
+        ? `You identified ${selectedFoods.length} food sources. Rotate them across the week and compare the vitamin D amount per serving.`
+        : `You identified a broad mix of ${selectedFoods.length} food sources. Focus on serving sizes and how regularly they actually appear in your week.`;
+
+  const outdoorStep = outdoorRoutine === "Mostly indoors"
+    ? "Because you are mostly indoors, record that pattern and ask how season, location, skin protection, and your health history affect the testing conversation."
+    : outdoorRoutine === "Some outdoor time"
+      ? "You report some outdoor time. Note how often and when it happens so your clinician has more context than a simple indoor/outdoor label."
+      : "You report regular outdoor time. Continue balancing outdoor activity with appropriate skin protection; outdoor time alone cannot show measured vitamin D status.";
+
+  const movementStep = movementRoutine === "1–2 days per week"
+    ? "Choose one realistic additional day for walking, resistance work, or another weight-bearing activity that fits your ability."
+    : movementRoutine === "3–4 days per week"
+      ? "Your movement routine is consistent. Identify which days include weight-bearing or strengthening activity and protect that schedule."
+      : "You report movement on five or more days. Focus on variety, recovery, and including strength or weight-bearing activity—not simply adding more days.";
+
+  const labelStep = amount > 0
+    ? `Your label entry of ${amount.toLocaleString()} ${labelUnit} equals ${convertedAmount.toLocaleString(undefined, { maximumFractionDigits: 2 })} ${labelUnit === "mcg" ? "IU" : "mcg"}. Confirm that the number is per serving and note how many servings you actually use.`
+    : "Enter the vitamin D amount from a food or supplement label, then use the conversion to prepare a clearer checkup question.";
+
+  const actionSteps = [foodStep, outdoorStep, movementStep, labelStep];
+
+  const generatedQuestions = [
+    outdoorRoutine === "Mostly indoors"
+      ? "Given that I spend most of my time indoors, would reviewing or measuring my vitamin D status be useful for me?"
+      : outdoorRoutine === "Some outdoor time"
+        ? "Does my amount of outdoor time, season, location, or sun-protection routine change what you would recommend discussing about vitamin D?"
+        : "Even with regular outdoor time, are there personal factors that could make a vitamin D measurement worth discussing?",
+    selectedFoods.length < 2
+      ? "Which vitamin-D-containing or fortified foods would fit my usual diet?"
+      : `I regularly use ${selectedFoods.slice(0, 3).join(", ")}. Should I review the serving sizes or label amounts more carefully?`,
+    movementRoutine === "1–2 days per week"
+      ? "What type of weight-bearing or strengthening activity would be appropriate for my bone health and current ability?"
+      : "Does my current movement routine include enough weight-bearing or strengthening activity for my bone-health needs?",
+    amount > 0
+      ? `My label shows ${amount.toLocaleString()} ${labelUnit} of vitamin D per serving. How should I interpret that alongside my diet, medications, and health history?`
+      : "Could any of my medications, supplements, or health conditions affect vitamin D or bone health?"
   ];
-  const visitQuestions = selectedQuestions.length ? selectedQuestions : wellnessQuestionOptions.slice(0, 3);
+  const visitQuestions = selectedQuestions.length ? selectedQuestions : generatedQuestions;
+  const guideHeadline = selectedFoods.length >= 3 && outdoorRoutine === "Regular outdoor time" && movementRoutine === "5+ days per week"
+    ? "Your answers show several established wellness habits—review the details, not just the count"
+    : selectedFoods.length >= 2 && movementRoutine !== "1–2 days per week"
+      ? "You have a useful foundation with a few details worth strengthening"
+      : "Your personalized starting plan for this week and your next checkup";
 
   return (
     <div className="wellness-toolkit">
@@ -67,7 +108,7 @@ function WellnessToolkit() {
       </div>
 
       <section className="wellness-snapshot" aria-live="polite">
-        <div><span>YOUR VITAMIN D ACTION GUIDE</span><h4>{selectedFoods.length ? selectedFoods.length + " current food source" + (selectedFoods.length === 1 ? "" : "s") + " identified" : "A practical plan for your next week and next checkup"}</h4></div>
+        <div><span>YOUR VITAMIN D ACTION GUIDE</span><h4>{guideHeadline}</h4></div>
         <div className="snapshot-grid"><p><b>Outdoor routine</b>{outdoorRoutine}</p><p><b>Movement</b>{movementRoutine}</p><p><b>Checkup questions ready</b>{visitQuestions.length}</p></div>
         <div className="action-guide"><b>Practical next steps</b>{actionSteps.map((step, index) => <p key={step}><span>{index + 1}</span>{step}</p>)}</div>
         <div className="saved-questions"><b>{selectedQuestions.length ? "Your saved questions for your next checkup" : "Useful questions for your next checkup"}</b>{visitQuestions.map((question) => <p key={question}>→ {question}</p>)}</div>
