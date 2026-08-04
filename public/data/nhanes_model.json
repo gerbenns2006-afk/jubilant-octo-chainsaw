@@ -1,0 +1,167 @@
+{
+  "generated_by": "research/rebuild_nhanes_model.py",
+  "data_release": "NHANES 2017-2018 with 2019 Linked Mortality File",
+  "status": "Exploratory observational analysis; not clinically validated",
+  "sources": {
+    "demographics": {
+      "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/DEMO_J.xpt",
+      "sha256": "c0b46e0345ea19404928656277c8b0d10b0cca348a9b2fe4fc3c67e8b7ee73ec"
+    },
+    "vitamin_d": {
+      "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/VID_J.xpt",
+      "sha256": "5a688e2107758b9344a222823fbdce4838928bbec70e1fd2f34e3ef5c45a95ac"
+    },
+    "medical_conditions": {
+      "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/MCQ_J.xpt",
+      "sha256": "79c50c805a377fcd61d44fae8b86a16af0a5741f8b1aeebda918d7d743c68f98"
+    },
+    "mortality": {
+      "url": "https://ftp.cdc.gov/pub/health_statistics/NCHS/datalinkage/linked_mortality/NHANES_2017_2018_MORT_2019_PUBLIC.dat",
+      "sha256": "42989d4fe35754d696b770f26553b0a309c110a9e26ab0ee504be3eae5987523"
+    }
+  },
+  "cohort": {
+    "participants": 515,
+    "events": 35,
+    "low_group": 65,
+    "low_group_events": 7,
+    "high_group": 450,
+    "high_group_events": 28,
+    "max_follow_up_months": 37,
+    "definition": "Adults 20+ reporting a prior cancer diagnosis (MCQ220=Yes), linkage eligible, with measured total 25(OH)D and follow-up time."
+  },
+  "kaplan_meier": {
+    "months": [
+      0,
+      3,
+      6,
+      9,
+      12,
+      15,
+      18,
+      21,
+      24,
+      27,
+      30,
+      33,
+      36
+    ],
+    "low_under_20_ng_ml": [
+      1.0,
+      0.98462,
+      0.95385,
+      0.93846,
+      0.90769,
+      0.90769,
+      0.90769,
+      0.90769,
+      0.90769,
+      0.87138,
+      0.87138,
+      0.87138,
+      0.87138
+    ],
+    "high_at_least_20_ng_ml": [
+      1.0,
+      0.99556,
+      0.98444,
+      0.97333,
+      0.96889,
+      0.95189,
+      0.94626,
+      0.94626,
+      0.94264,
+      0.9322,
+      0.92486,
+      0.9133,
+      0.9133
+    ]
+  },
+  "cox": {
+    "features": [
+      "age",
+      "female",
+      "vitamin_d_per_10"
+    ],
+    "coefficients": {
+      "age": 0.0931210136551759,
+      "female": -0.14260970880899196,
+      "vitamin_d_per_10": -0.3666646483140719
+    },
+    "means": {
+      "age": 66.46796116504855,
+      "female": 0.5339805825242718,
+      "vitamin_d_per_10": 3.4396815533980587
+    },
+    "baseline_months": [
+      0,
+      3,
+      6,
+      9,
+      12,
+      15,
+      18,
+      21,
+      24,
+      27,
+      30,
+      33,
+      36
+    ],
+    "baseline_survival": [
+      1.0,
+      0.996596,
+      0.988549,
+      0.981565,
+      0.976866,
+      0.967676,
+      0.964554,
+      0.964554,
+      0.962509,
+      0.953836,
+      0.949776,
+      0.94355,
+      0.94355
+    ],
+    "concordance_index": 0.723,
+    "vitamin_d_hr_per_10_ng_ml": 0.693,
+    "vitamin_d_hr_ci95": [
+      0.5087,
+      0.9442
+    ],
+    "vitamin_d_p": 0.020115
+  },
+  "machine_learning": {
+    "task": "Cross-sectional prediction of measured total 25(OH)D <20 ng/mL among the analytic cancer-history cohort.",
+    "features": [
+      "age",
+      "sex",
+      "race_ethnicity",
+      "exam_season",
+      "family_income_to_poverty_ratio"
+    ],
+    "validation": "Five-fold stratified cross-validation; all preprocessing refit inside each fold.",
+    "positive_cases": 65,
+    "prevalence": 0.1262,
+    "models": {
+      "logistic_regression": {
+        "roc_auc": 0.652,
+        "average_precision": 0.2263,
+        "brier_score": 0.1067
+      },
+      "hist_gradient_boosting": {
+        "roc_auc": 0.6657,
+        "average_precision": 0.2291,
+        "brier_score": 0.1118
+      }
+    },
+    "intended_use": "Research benchmark only; not a clinical testing-priority model."
+  },
+  "limitations": [
+    "Observational association cannot establish causality or treatment benefit.",
+    "Only 35 deaths and at most 37 months of follow-up; estimates are imprecise.",
+    "The Cox model is unweighted and does not implement NHANES complex-survey variance estimation.",
+    "Cancer types and treatment histories are heterogeneous.",
+    "The public-use mortality file protects confidentiality and has analytic limitations documented by NCHS."
+  ]
+}
