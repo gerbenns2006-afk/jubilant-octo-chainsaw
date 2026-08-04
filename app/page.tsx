@@ -52,7 +52,7 @@ export default function Home() {
               <div className="details"><div><small>OUTDOOR ACTIVITY</small><strong>Limited · ~1 hr/week</strong></div><div><small>BODY MASS INDEX</small><strong>31 kg/m²</strong></div><div><small>DIETARY VITAMIN D</small><strong>Low reported intake</strong></div><div><small>SUPPLEMENT USE</small><strong>None reported</strong></div></div>
               <div className="context"><b>Clinic context</b><p>Confirmatory vitamin D testing is limited this month. Which survivors should be considered first?</p></div>
               <button onClick={() => analyze()} disabled={loading}>{loading ? "Analyzing fictional profile…" : "Analyze testing priority"}<span>→</span></button>
-              <small className="disclaimer">Simulation only. This does not diagnose deficiency or recommend treatment.</small>
+              <small className="disclaimer">Research decision-model output. Built for transparent testing-priority analysis; clinical interpretation remains with qualified professionals.</small>
             </article>
 
             <article className={`result-card ${result ? "active" : ""}`} aria-live="polite">
