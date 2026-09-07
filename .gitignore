@@ -6,3 +6,10 @@ dist/
 server.log
 server-error.log
 *.tgz
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+work/nhanes_raw/
+*.tsbuildinfo
