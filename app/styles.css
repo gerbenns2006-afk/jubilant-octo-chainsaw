@@ -67,7 +67,14 @@
 .planner-task p { line-height: 1.6; }
 .planner-task small { font-size: .9rem; line-height: 1.5; }
 .planner-note { font-size: .95rem; line-height: 1.6; }
+.planner-food-entry { grid-column: 1 / -1; }
+.planner-food-entry textarea { width: 100%; min-height: 110px; margin-top: .65rem; resize: vertical; border: 1px solid #90a9a0; border-radius: .65rem; padding: .85rem; background: #fff; color: #102b24; font: inherit; line-height: 1.55; }
+.planner-food-entry > small { display: block; margin-top: .35rem; text-align: right; }
+.planner-heard { margin-bottom: 1.5rem; padding: 1.1rem 1.2rem; border-left: 4px solid #a6edcc; background: rgba(255,255,255,.06); }
+.planner-heard > span { display: block; color: #a6edcc; font-size: .75rem; font-weight: 700; letter-spacing: .09em; }
+.planner-heard h4 { margin: .45rem 0; }
+.planner-entry-quote { font-weight: 700; overflow-wrap: anywhere; }
 .planner-science { margin-top: 1.5rem; line-height: 1.6; }
 .planner-science summary { cursor: pointer; padding: .75rem 0; font-weight: 700; }
-.everyday-planner :is(button,input,select,summary):focus-visible { outline: 3px solid #89e3bc; outline-offset: 3px; }
+.everyday-planner :is(button,input,select,textarea,summary):focus-visible { outline: 3px solid #89e3bc; outline-offset: 3px; }
 @media(max-width:800px) { .planner-task-grid { grid-template-columns: 1fr; } }
