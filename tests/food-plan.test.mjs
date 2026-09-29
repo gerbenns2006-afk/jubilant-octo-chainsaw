@@ -13,7 +13,7 @@ test('vegan filter wins over incompatible preference',()=>{
 test('additional medical restrictions pause food suggestions',()=>assert.deepEqual(recommendFoods({...base,otherRestriction:true}),[]));
 test('skipped answers produce bounded choices; conflicting filters stay empty',()=>{
  assert.equal(recommendFoods(base).length,3);
- assert.deepEqual(recommendFoods({...base,diet:'vegan',quick:true,avoids:['Wheat']}),[]);
+ assert.deepEqual(recommendFoods({...base,diet:'vegan',quick:true,avoids:['Wheat','Soy']}),[]);
 });
 test('specific foods typed in plain language shape recommendations',()=>{
  const plan=recommendFoods({...base,foodText:'I usually eat salmon with rice and vegetables'});
