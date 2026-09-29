@@ -1,34 +1,213 @@
+import SiteFooter from "../components/SiteFooter";
+import SiteNav from "../components/SiteNav";
+import model from "../../public/data/nhanes_model.json";
+
 export default function ModelingPage() {
   return (
-    <main>
-      <nav className="nav shell">
-        <a className="brand" href="/"><span>O</span> ONQIVA</a>
-        <div className="navlinks"><a href="/">Home</a><a className="active-link" href="/modeling">Modeling</a><a href="/#evidence">Data</a><a href="/#next">Roadmap</a><a href="/about">About</a></div>
-        <a className="nav-cta" href="mailto:sciencelecturesyt@gmail.com">Collaborate</a>
-      </nav>
+    <main id="top">
+      <a className="skip-link" href="#methods-content">
+        Skip to content
+      </a>
+      <SiteNav active="modeling" />
 
-      <section className="page-hero modeling-hero shell">
-        <div className="eyebrow"><i /> THE MODELING BEHIND ONQIVA</div>
-        <h1>From population outcomes<br />to <em>molecular vulnerability.</em></h1>
-        <p className="hero-copy">ONQIVA combines data-derived survival analysis, explainable decision simulation, and an expanding molecular machine-learning program.</p>
-        <div className="modeling-status"><span>BUILT · OUTCOMES</span><span>PROTOTYPED · ALLOCATION</span><span>NOW · MOLECULAR ATLAS</span></div>
-      </section>
+      <div id="methods-content">
+        <section className="page-hero modeling-hero shell">
+          <div className="eyebrow">Methods and evidence</div>
+          <h1>
+            Three calculations.
+            <br />
+            <em>Three different meanings.</em>
+          </h1>
+          <p className="hero-copy">
+            ONQIVA includes an exploratory survival analysis, a cross-sectional
+            prediction benchmark, and a fictional testing-allocation simulation.
+            They use different data and answer different questions.
+          </p>
+        </section>
 
-      <section className="modeling-body">
-        <div className="shell">
-          <div className="modeling-intro"><div><div className="kicker">WHERE MACHINE LEARNING ENTERS</div><h2>Three connected modeling layers.</h2></div><p>The platform separates what has been fitted from public data, what currently demonstrates decision logic, and what is being developed next.</p></div>
-          <div className="modeling-layers">
-            <article className="complete"><b>01</b><span>COMPLETED FOUNDATION</span><h3>Data-derived survival modeling</h3><p>ONQIVA Outcomes uses joined NHANES demographics, measured serum vitamin D, cancer history, and linked mortality data. Cox proportional-hazards modeling estimates how covariates modify relative hazard and dynamically generates survival curves.</p><ul><li>Reproducible public-data pipeline</li><li>Multivariable feature processing</li><li>Interactive Cox survival inference</li><li>Model diagnostics and subgroup framing</li></ul></article>
-            <article><b>02</b><span>WORKING PROTOTYPE</span><h3>Explainable decision modeling</h3><p>The clinic simulator converts patient context into a transparent testing-priority score and compares model-guided allocation with random allocation under limited capacity.</p><ul><li>Human-readable factor contributions</li><li>Capacity-constrained allocation</li><li>Scenario-based sensitivity testing</li><li>Clear separation from the fitted survival model</li></ul></article>
-            <article className="now"><b>03</b><span>BUILDING NOW</span><h3>Molecular machine learning</h3><p>ONQIVA Atlas will connect vitamin-D-pathway activity with osteosarcoma expression patterns, clinical outcomes, and cancer-dependency evidence to prioritize molecular vulnerabilities for investigation.</p><ul><li>Pathway-activity feature engineering</li><li>Molecular subgroup discovery</li><li>Regularized and nonlinear survival comparisons</li><li>Dependency and vulnerability ranking</li></ul></article>
+        <section className="modeling-body">
+          <div className="shell">
+            <div className="modeling-intro">
+              <div>
+                <div className="kicker">01 · SURVIVAL ANALYSIS</div>
+                <h2>Measured vitamin D and short-term outcomes.</h2>
+              </div>
+              <p>
+                The public-data cohort includes {model.cohort.participants}{" "}
+                adults who reported a previous cancer diagnosis, had a measured
+                25(OH)D result, and were eligible for mortality linkage. There
+                were {model.cohort.events} observed deaths and a maximum of{" "}
+                {model.cohort.max_follow_up_months} months of follow-up.
+              </p>
+            </div>
+
+            <div className="methods-result">
+              <article>
+                <span>MODEL</span>
+                <h3>Age-, sex-, and vitamin-D-adjusted Cox regression</h3>
+                <p>
+                  Vitamin D is entered as a continuous measurement, scaled per
+                  10 ng/mL. The interactive curve shows a scenario from this
+                  fitted model. It does not estimate a person’s future.
+                </p>
+                <code>
+                  h(t | x) = h₀(t) exp(β₁ age + β₂ sex + β₃ 25(OH)D / 10)
+                </code>
+              </article>
+              <article>
+                <span>ESTIMATE FROM THIS SAMPLE</span>
+                <div className="methods-estimate">
+                  <strong>{model.cox.vitamin_d_hr_per_10_ng_ml}</strong>
+                  <small>
+                    HR per +10 ng/mL · 95% CI{" "}
+                    {model.cox.vitamin_d_hr_ci95[0].toFixed(2)} to{" "}
+                    {model.cox.vitamin_d_hr_ci95[1].toFixed(2)}
+                  </small>
+                </div>
+                <p>
+                  The estimate describes an association in this sample. It
+                  cannot establish cause, treatment benefit, or who should be
+                  tested.
+                </p>
+              </article>
+            </div>
+
+            <div className="methods-caveat">
+              <strong>Limits that change how to read this result</strong>
+              <p>
+                The analysis is observational and unweighted. It uses a small
+                number of deaths, short follow-up, and self-reported cancer
+                history. Confounding, selection, and differences in cancer type
+                or treatment may affect the association.
+              </p>
+            </div>
+
+            <div className="methods-links">
+              <a href="/#research-note">Read the worked research note</a>
+              <a href="/#model">Explore the interactive model</a>
+              <a
+                href="https://github.com/gerbenns2006-afk/jubilant-octo-chainsaw/tree/main/research"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Inspect the analysis code ↗
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="modeling-pipeline"><div className="shell"><div className="kicker">COMPUTATIONAL PIPELINE</div><h2>Evidence moves through a reproducible system.</h2><div className="big-pipeline"><div><b>1</b><span>PUBLIC DATA</span><p>Documented health, molecular, clinical, and dependency sources.</p></div><i>→</i><div><b>2</b><span>FEATURE ENGINEERING</span><p>Covariates, pathway scores, molecular signatures, and quality control.</p></div><i>→</i><div><b>3</b><span>MODEL TRAINING</span><p>Statistical baselines, regularization, nonlinear comparison, and validation.</p></div><i>→</i><div><b>4</b><span>EXPLAINABLE OUTPUT</span><p>Survival estimates, subgroup structure, calibrated uncertainty, and ranked hypotheses.</p></div></div></div></section>
+        <section className="modeling-body modeling-light">
+          <div className="shell">
+            <div className="modeling-intro">
+              <div>
+                <div className="kicker">02 · CROSS-SECTIONAL BENCHMARK</div>
+                <h2>Can demographics predict a measured vitamin D category?</h2>
+              </div>
+              <p>
+                This separate experiment predicts whether measured 25(OH)D was
+                below 20 ng/mL using age, sex, race/ethnicity, examination
+                season, and income-to-poverty ratio. It does not predict cancer
+                outcomes or decide who receives a test.
+              </p>
+            </div>
+            <div className="benchmark-grid">
+              <article>
+                <span>LOGISTIC REGRESSION</span>
+                <strong>
+                  {model.machine_learning.models.logistic_regression.roc_auc.toFixed(
+                    2,
+                  )}
+                </strong>
+                <small>five-fold ROC-AUC</small>
+              </article>
+              <article>
+                <span>GRADIENT BOOSTING</span>
+                <strong>
+                  {model.machine_learning.models.hist_gradient_boosting.roc_auc.toFixed(
+                    2,
+                  )}
+                </strong>
+                <small>five-fold ROC-AUC</small>
+              </article>
+              <article className="benchmark-interpretation">
+                <span>WHAT THE SCORE MEANS</span>
+                <p>
+                  These results show modest discrimination in this cohort.
+                  Cross-validation is internal; independent validation and
+                  calibration are still needed.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
 
-      <section className="modeling-cta"><div className="shell work-grid"><div><div className="kicker">EXPERIENCE THE MODEL</div><h2>Keep the science detailed.<br />Keep the interface understandable.</h2></div><div><p>The interactive survival model and testing-priority workflow remain on the homepage so visitors can experience the system before studying its methods.</p><a className="primary" href="/#model">Open the interactive model →</a></div></div></section>
-      <footer className="shell"><a className="brand" href="/"><span>O</span> ONQIVA</a><p><a href="mailto:sciencelecturesyt@gmail.com">sciencelecturesyt@gmail.com</a></p><p>Population · Decision · Molecular modeling</p></footer>
+        <section className="modeling-body">
+          <div className="shell">
+            <div className="modeling-intro">
+              <div>
+                <div className="kicker">03 · FICTIONAL SIMULATION</div>
+                <h2>Testing priority is a separate written rule.</h2>
+              </div>
+              <p>
+                The clinic exercise uses fictional inputs and fixed scoring
+                logic. It is not fitted to NHANES, the survival model, or a
+                clinical dataset. Its purpose is to make assumptions visible and
+                open to critique.
+              </p>
+            </div>
+            <div className="modeling-layers">
+              <article>
+                <b>01</b>
+                <span>INPUTS</span>
+                <h3>Fictional profile</h3>
+                <p>
+                  Age, body mass index, reported routine, and available test
+                  capacity are example values, not patient records.
+                </p>
+              </article>
+              <article>
+                <b>02</b>
+                <span>RULE</span>
+                <h3>Inspectable score</h3>
+                <p>
+                  Each factor contributes a visible number of points. The rule
+                  is illustrative and has not been clinically validated.
+                </p>
+              </article>
+              <article>
+                <b>03</b>
+                <span>COMPARISON</span>
+                <h3>Simulated allocation</h3>
+                <p>
+                  The example compares the rule with random allocation. It
+                  cannot establish improved access or health outcomes.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section className="modeling-next">
+          <div className="shell work-grid">
+            <div>
+              <div className="kicker">WHAT IS NOT BUILT YET</div>
+              <h2>Validation comes before a clinical claim.</h2>
+            </div>
+            <div>
+              <p>
+                The next work is independent statistical review, clearer
+                uncertainty analysis, and a carefully defined research question.
+                Molecular data and clinical pilot work remain future
+                possibilities, not current product features.
+              </p>
+              <a className="primary" href="/#collaborate">
+                Request a methods review
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+      <SiteFooter />
     </main>
   );
 }
