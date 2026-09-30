@@ -2959,3 +2959,41 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+@media (min-width: 601px) and (max-width: 960px) {
+  .nav {
+    height: auto;
+    min-height: 76px;
+    flex-wrap: wrap;
+    padding: var(--space-4) 0;
+  }
+  .navlinks {
+    order: 3;
+    width: 100%;
+    gap: var(--space-2);
+    overflow-x: auto;
+    padding: var(--space-3) 0 var(--space-1);
+    border-top: 1px solid var(--line);
+    margin-top: var(--space-3);
+    scrollbar-width: none;
+  }
+  .navlinks::-webkit-scrollbar {
+    display: none;
+  }
+  .navlinks a {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-round);
+    background: var(--soft-paper);
+    color: var(--green);
+    font-size: var(--type-xs);
+  }
+  .nav-cta {
+    margin-left: auto;
+  }
+  .hero h1,
+  .page-hero h1 {
+    font-size: clamp(2.5rem, 7vw, 3.75rem);
+  }
+}
