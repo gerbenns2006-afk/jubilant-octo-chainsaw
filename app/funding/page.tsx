@@ -129,7 +129,7 @@ export default function FundingPage() {
                 that recovery measure as a promising marker. Neither outcome
                 would establish a patient test or treatment.
               </p>
-              <a href="/neurodegeneration">Read the study design</a>
+              <a href="/neurodegeneration">See the pilot work and next question</a>
               <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10996466/" target="_blank" rel="noreferrer">
                 Read the motivating study ↗
               </a>

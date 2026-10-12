@@ -88,7 +88,7 @@ export default function Home() {
           </div>
           <div className="hero-proof">
             <span>515-person survivorship analysis</span>
-            <a href="/neurodegeneration">ALS recovery study concept</a>
+            <a href="/neurodegeneration">Neurodegeneration pilot and next study</a>
             <span>Hands-on protein research</span>
           </div>
         </section>

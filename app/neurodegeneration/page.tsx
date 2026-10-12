@@ -1,6 +1,12 @@
 import SiteFooter from "../components/SiteFooter";
 import SiteNav from "../components/SiteNav";
 
+export const metadata = {
+  title: "Neurodegeneration work | ONQIVA",
+  description:
+    "The completed Alzheimer’s sample-culture pilot, the recovery-history model it motivated, and the separate ALS study proposed next.",
+};
+
 export default function NeurodegenerationPage() {
   return (
     <main id="top">
@@ -11,221 +17,169 @@ export default function NeurodegenerationPage() {
 
       <div id="neuro-content">
         <section className="page-hero shell neuro-hero">
-          <div className="eyebrow">ALS / NEURODEGENERATION · STUDY DESIGN</div>
+          <div className="eyebrow">NEURODEGENERATION · COMPLETED PILOT WORK</div>
           <h1>
-            How long does a stressed
+            It started with samples
             <br />
-            <em>motor neuron take to recover?</em>
+            <em>in culture.</em>
           </h1>
           <p className="hero-copy">
-            ONQIVA is developing a cell-based study of recovery after transient
-            stress. The question is whether the shape of that recovery predicts
-            how an ALS-related motor neuron handles a second challenge.
-            Earlier culture work helped frame the question; the experiment
-            below is the next study, not a report of measured ONQIVA outcomes.
+            I purchased Alzheimer&apos;s disease research material through
+            Sanguine Bio, cultured it using an incubator, and completed
+            exploratory cell-culture tests. That bench work came before the
+            recovery model and the separate ALS study I am now seeking to fund.
           </p>
           <div className="hero-actions">
-            <a className="primary" href="#study-design">
-              Read the study design
+            <a className="primary" href="#pilot-record">
+              See what I did
             </a>
-            <a className="secondary" href="#prediction">
-              See the prediction
+            <a className="secondary" href="#model-we-developed">
+              See the model it led to
             </a>
+          </div>
+          <div className="modeling-status" aria-label="Work status">
+            <span>SAMPLES PURCHASED</span>
+            <span>INCUBATOR CULTURE COMPLETED</span>
+            <span>PILOT TESTS COMPLETED</span>
           </div>
         </section>
 
-        <section className="study-overview" id="study-design">
+        <section className="study-overview" id="pilot-record">
           <div className="shell">
             <div className="section-head">
               <div>
-                <div className="kicker">THE RESEARCH QUESTION</div>
-                <h2>Measure recovery, then ask if it predicts resilience.</h2>
+                <div className="kicker">WHAT I ACTUALLY DID</div>
+                <h2>The pilot happened at the bench.</h2>
               </div>
               <p>
-                TDP-43 normally concentrates in the nucleus. Its distribution
-                can change under stress, and persistent cytoplasmic TDP-43 is
-                relevant to ALS biology. A single image after a challenge
-                misses the time it took a cell to return toward baseline.
+                These are the steps I can account for from the early
+                Alzheimer&apos;s-related work. They are not an ALS experiment.
               </p>
             </div>
 
             <div className="study-grid">
               <article className="study-card study-card-featured">
-                <span>01 · ESTABLISH THE ASSAY</span>
-                <h3>Motor-neuron-like culture</h3>
+                <span>01 · SOURCED THE MATERIAL</span>
+                <h3>Purchased research samples</h3>
                 <p>
-                  Use NSC-34 cells to check that a brief, nonlethal stress
-                  produces a measurable TDP-43 localization curve. This mouse
-                  hybrid line is a practical assay screen; it cannot establish
-                  what happens in a person with ALS.
+                  I obtained Alzheimer&apos;s disease research material through
+                  Sanguine Bio for exploratory cell work. The specific product,
+                  donor identifiers, and lot information are not in the
+                  available project record.
                 </p>
               </article>
               <article className="study-card">
-                <span>02 · TEST HUMAN RELEVANCE</span>
-                <h3>ALS motor neurons</h3>
+                <span>02 · CULTURED THE MATERIAL</span>
+                <h3>Used an incubator</h3>
                 <p>
-                  Repeat the question in human iPSC-derived motor neurons with
-                  a C9orf72 ALS background and matched isogenic controls.
-                  Independent cell lines and differentiations, rather than
-                  individual wells, anchor the comparison.
+                  I carried out incubator-based culture work with the purchased
+                  material. The original culture schedule, media, and handling
+                  details are not available to publish here.
                 </p>
               </article>
               <article className="study-card">
-                <span>03 · MAKE A HELD-OUT PREDICTION</span>
-                <h3>One pulse, then another</h3>
+                <span>03 · RAN THE PILOT</span>
+                <h3>Completed exploratory tests</h3>
                 <p>
-                  Estimate a recovery measure after the first matched stress
-                  pulse. Ask whether it predicts TDP-43 localization and cell
-                  health after a second pulse at a shorter or longer recovery
-                  interval in held-out cultures.
+                  I performed pilot cell-culture tests. The assay identity,
+                  controls, and raw readouts have not been recovered, so I am
+                  not assigning a direction or size to a biological effect.
                 </p>
               </article>
             </div>
 
             <aside className="study-boundary">
-              <strong>Why this design is specific:</strong>
-              Published human motor-neuron studies show that stress responses
-              vary by stressor and genetic background. A result in one ALS
-              model would not establish a general marker for every person or
-              every neurodegenerative disease.
+              <strong>What the record supports:</strong> completed sample
+              purchase, culture, and exploratory testing. It does not yet
+              support naming a particular cell line or reporting a measured
+              Alzheimer&apos;s finding until the original order and lab notes are
+              available.
             </aside>
           </div>
         </section>
 
-        <section className="reaction-model-section">
+        <section className="reaction-model-section" id="model-we-developed">
           <div className="shell">
             <div className="section-head reaction-section-head">
               <div>
-                <div className="kicker">WHAT THE EXPERIMENT WOULD RECORD</div>
-                <h2>A time series with a clear primary readout.</h2>
+                <div className="kicker">WHAT I BUILT FROM THE QUESTION</div>
+                <h2>I turned recovery time into a testable model.</h2>
               </div>
               <p>
-                Baseline, post-stress, and recovery images would be analyzed
-                using the same rules across matched cultures. The stress dose
-                and time points would be fixed after an assay feasibility run.
+                After the pilot, I developed a separate hypothesis about how
+                the time between two stress events might change a later cell
+                response. The original example concerned protein seeding in a
+                Parkinson&apos;s-related model. It was conceptual work, not an
+                outcome measured in the Alzheimer&apos;s samples.
               </p>
             </div>
 
-            <div className="reaction-steps">
-              <article>
-                <span>PRIMARY</span>
-                <h3>TDP-43 localization</h3>
+            <div className="reaction-equation-card">
+              <div>
+                <span className="evidence-label">MODEL DRAFT · NOT FITTED TO PILOT DATA</span>
+                <h3>Reaction, clearance, and spread</h3>
+                <code>∂P/∂t = D∇²P + αP(1 − P/K) − μP + I(x,t)</code>
                 <p>
-                  Track the nuclear-to-cytoplasmic TDP-43 ratio in identified
-                  motor neurons over recovery. The main comparison is how
-                  completely and how quickly that ratio returns toward its
-                  baseline range.
+                  I sketched this reaction–diffusion model to make the idea
+                  precise. It treats a selected protein signal as something
+                  that can spread, amplify, and clear while an experimental
+                  pulse adds new input. No parameter in this equation was
+                  estimated from the completed culture pilot.
                 </p>
-              </article>
-              <article>
-                <span>SECONDARY</span>
-                <h3>Cell integrity</h3>
-                <p>
-                  Record neurite structure and viability so a change in
-                  localization is interpreted alongside cell health. Image
-                  analysis would be blinded to condition.
-                </p>
-              </article>
-              <article>
-                <span>QUALITY CONTROL</span>
-                <h3>Replication and batch effects</h3>
-                <p>
-                  Compare independent differentiations and cell lines,
-                  document expression and imaging differences, and keep an
-                  entire line or differentiation out of model fitting for the
-                  final prediction check.
-                </p>
-              </article>
+              </div>
+              <div className="reaction-parameters">
+                <p><strong>P</strong><span>protein signal in a future assay</span></p>
+                <p><strong>D</strong><span>spatial spread, requiring spatial images</span></p>
+                <p><strong>α</strong><span>local amplification in the model</span></p>
+                <p><strong>μ</strong><span>clearance of the signal</span></p>
+                <p><strong>I(x,t)</strong><span>timed experimental input</span></p>
+              </div>
+            </div>
+
+            <div className="reaction-model-boundary">
+              <strong>The prediction I wrote down:</strong>
+              <p>
+                With the same total challenge, a shorter recovery interval
+                could leave more residual signal and change the response to a
+                second pulse. The proposed comparison would need matched
+                cultures and repeated measurements. The pilot did not test or
+                validate that prediction.
+              </p>
             </div>
           </div>
         </section>
 
-        <section className="timing-model" id="prediction">
+        <section className="timing-model" id="next-study">
           <div className="shell timing-grid">
             <div>
-              <div className="kicker">A TESTABLE FORECAST</div>
-              <h2>Does the recovery curve carry information a snapshot misses?</h2>
+              <div className="kicker">NEXT EXPERIMENT · ALS</div>
+              <h2>The ALS test is a separate next step.</h2>
               <p>
-                The working prediction is that a shorter interval before the
-                second challenge leaves more residual cytoplasmic TDP-43 and
-                greater later injury in C9orf72 ALS motor neurons than a longer
-                interval. ONQIVA has not measured that comparison yet.
+                I have since framed an ALS-specific question: could the way a
+                motor neuron recovers after a brief stress predict its response
+                to a second challenge better than a single snapshot? This
+                question grew from the recovery idea, but it requires its own
+                cell model, TDP-43 readout, controls, and independent validation.
               </p>
               <p>
-                A useful recovery measure must predict the held-out response
-                more accurately than baseline localization alone. If that gain
-                disappears across independent lines, the proposed marker fails
-                its key test.
+                I have not run that ALS comparison or measured its predicted
+                effect. The funding plan starts with an assay feasibility step
+                before any human ALS cell comparison.
               </p>
             </div>
             <div className="timing-equations">
-              <code>Recovery signal: R(t) = R∞ + (R₀ − R∞)e^(−t/τ)</code>
+              <span className="evidence-label">PROPOSED · NOT A PILOT RESULT</span>
               <p>
-                Here τ summarizes the pace of return toward baseline. This
-                simple curve is an analysis starting point, not a fitted
-                biological constant. The study would compare it with less
-                restrictive fits and report uncertainty by cell line.
-              </p>
-              <p>
-                A later reaction–diffusion model could address spatial protein
-                spread only if position-resolved imaging is collected. A
-                plate-average recovery curve cannot identify a spread rate.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="funding-path">
-          <div className="shell funding-grid">
-            <div>
-              <div className="kicker">THE FUNDING CASE</div>
-              <h2>Here is the study I am asking supporters to fund.</h2>
-              <p>
-                Financial support would pay for a reproducible assay, human
-                cell comparisons, analysis, and reporting. The research case
-                brings my previous work together with the milestones and
-                resources this study requires.
+                The proposed study would first establish a reliable recovery
+                readout in motor-neuron-like culture, then test it in matched
+                human ALS and control motor neurons. A held-out comparison
+                would ask whether a recovery curve adds predictive information
+                beyond baseline localization alone.
               </p>
               <a className="primary" href="/funding">
-                See the funding case
+                See the study and funding plan
               </a>
             </div>
-            <ol>
-              <li>Lock the imaging readout and acceptable cell-health range in an assay feasibility study.</li>
-              <li>Estimate recovery curves in matched human ALS and corrected motor-neuron lines.</li>
-              <li>Test the shorter-versus-longer recovery prediction on independent cultures.</li>
-              <li>Share the analysis, uncertainty, and null results before proposing any broader use.</li>
-            </ol>
-          </div>
-        </section>
-
-        <section className="source-strip">
-          <div className="shell">
-            <span className="evidence-label">SCIENTIFIC GROUNDING</span>
-            <p>
-              Prior studies motivate this question; they are not ONQIVA
-              results. Human C9orf72 ALS motor neurons showed impaired
-              TDP-43 recovery after repeated mild injury. Another human
-              motor-neuron study found stress-specific recovery patterns and
-              no recovery-rate difference in its VCP-mutant comparison.
-              Those mixed findings are why this proposal names the cell
-              background and includes a falsification check.
-            </p>
-            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10996466/" target="_blank" rel="noreferrer">
-              Repeated injury in C9orf72 motor neurons ↗
-            </a>
-            {" · "}
-            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7664327/" target="_blank" rel="noreferrer">
-              Stress-specific recovery in human motor neurons ↗
-            </a>
-            {" · "}
-            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8743001/" target="_blank" rel="noreferrer">
-              TDP-43 during cellular stress recovery ↗
-            </a>
-            {" · "}
-            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8217991/" target="_blank" rel="noreferrer">
-              NSC-34 TDP-43 assay precedent ↗
-            </a>
           </div>
         </section>
       </div>

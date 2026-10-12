@@ -98,7 +98,7 @@ export default function WorkPage() {
                     not assign a measured effect to those early tests.
                   </p>
                   <div className="timeline-links">
-                    <a href="/neurodegeneration">See the research direction</a>
+                    <a href="/neurodegeneration#pilot-record">See the completed pilot</a>
                   </div>
                 </div>
               </li>
@@ -114,7 +114,7 @@ export default function WorkPage() {
                     ONQIVA has not reported results from that study.
                   </p>
                   <div className="timeline-links">
-                    <a href="/neurodegeneration">Read the study design</a>
+                    <a href="/neurodegeneration#next-study">See the proposed next study</a>
                   </div>
                 </div>
               </li>
