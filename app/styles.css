@@ -3182,6 +3182,9 @@ body {
 .reaction-section-head h2 {
   max-width: 720px;
 }
+.reaction-section-head > p {
+  color: var(--green-text);
+}
 .reaction-steps {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -3226,6 +3229,8 @@ body {
   color: var(--white);
 }
 .reaction-equation-card .evidence-label {
+  border-color: var(--green-border);
+  background: var(--green-panel);
   color: var(--mint);
 }
 .reaction-equation-card h3 {
