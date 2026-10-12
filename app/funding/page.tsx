@@ -4,7 +4,7 @@ import SiteNav from "../components/SiteNav";
 export const metadata = {
   title: "Support the research | ONQIVA",
   description:
-    "The research record, testable ALS study, milestones, and partnership request behind ONQIVA's next experiment.",
+    "The research record, testable ALS study, milestones, and financial support request behind ONQIVA's next experiment.",
 };
 
 export default function FundingPage() {
@@ -24,7 +24,8 @@ export default function FundingPage() {
             <em>we can actually test.</em>
           </h1>
           <p className="hero-copy">
-            I am seeking a host lab and seed support for a focused ALS study:
+            I am seeking financial support from people and philanthropic
+            funders to move a focused ALS question into a real experiment:
             can the way a motor neuron recovers after brief stress predict its
             response to a later challenge? ONQIVA would test that prediction
             against a simpler snapshot measure and report the result even if
@@ -41,7 +42,7 @@ export default function FundingPage() {
           <div className="funding-status" aria-label="Research status">
             <span>Published research and independent analysis</span>
             <span>ALS experiment proposed</span>
-            <span>Seeking a lab and seed support</span>
+            <span>Seeking individual and philanthropic support</span>
           </div>
         </section>
 
@@ -136,7 +137,7 @@ export default function FundingPage() {
           </div>
         </section>
 
-        <section className="funding-milestones" id="funding-ask">
+        <section className="funding-milestones">
           <div className="shell">
             <div className="section-head">
               <div>
@@ -145,8 +146,8 @@ export default function FundingPage() {
               </div>
               <p>
                 The first funded step is assay feasibility with a qualified
-                laboratory partner. Human ALS cell work follows only if the
-                readout is reproducible and the protocol is ready.
+                research team. Human ALS cell work follows only if the readout
+                is reproducible and the protocol is ready.
               </p>
             </div>
             <ol className="funding-milestone-grid">
@@ -164,10 +165,10 @@ export default function FundingPage() {
                 <span>STAGE 02</span>
                 <h3>Test the human-cell comparison</h3>
                 <p>
-                  With a host lab, compare C9orf72 iPSC-derived motor neurons
-                  and matched isogenic controls across independent
-                  differentiations. Measure TDP-43 localization through
-                  recovery with blinded image analysis.
+                  Compare C9orf72 iPSC-derived motor neurons and matched
+                  isogenic controls across independent differentiations.
+                  Measure TDP-43 localization through recovery with blinded
+                  image analysis.
                 </p>
                 <strong>Deliverable: recovery curves with uncertainty by line and batch.</strong>
               </li>
@@ -185,31 +186,31 @@ export default function FundingPage() {
           </div>
         </section>
 
-        <section className="funding-resources">
+        <section className="funding-resources" id="funding-ask">
           <div className="shell funding-resources-grid">
             <div>
-              <div className="kicker">THE PRACTICAL REQUEST</div>
-              <h2>People, lab access, and a measured first study.</h2>
+              <div className="kicker">THE FINANCIAL REQUEST</div>
+              <h2>Put support behind a measurable first study.</h2>
               <p>
-                Seed support would cover qualified lab time, cell models and
-                reagents, imaging, independent quantitative review, and clear
-                reporting of the results. The detailed budget and schedule
-                should be set with the host institution that will run the
-                experiments.
+                Financial support would pay for qualified research time, cell
+                models and reagents, imaging, independent quantitative review,
+                and clear reporting of the results. I will share an itemized
+                budget, schedule, and research execution plan with interested
+                supporters before any project-specific commitment.
               </p>
             </div>
             <div className="funding-needs">
               <article>
-                <span>HOST LAB</span>
-                <p>Motor-neuron culture, imaging capacity, and oversight of the experimental protocol.</p>
+                <span>INDIVIDUAL SUPPORTERS</span>
+                <p>Help finance the first assay feasibility step and receive clear progress and results.</p>
               </article>
               <article>
-                <span>QUANTITATIVE PARTNER</span>
-                <p>Review of the primary comparison, replication unit, blinding, and held-out prediction.</p>
+                <span>PHILANTHROPIC FUNDERS</span>
+                <p>Underwrite a defined research milestone or the full staged study with an agreed budget.</p>
               </article>
               <article>
-                <span>SEED FUNDER</span>
-                <p>Support for the staged feasibility work and a report that makes success and failure equally visible.</p>
+                <span>ACCOUNTABILITY</span>
+                <p>Supporters can inspect the protocol, the spending plan, and a results report that includes null findings.</p>
               </article>
             </div>
           </div>
@@ -223,14 +224,14 @@ export default function FundingPage() {
             </div>
             <div>
               <p>
-                If you support early ALS research, run a relevant laboratory,
-                or can review the study design, I would welcome a conversation
-                about a scoped proposal and budget. The current page is a
-                public research case; detailed experimental planning would be
-                developed with the lab that takes it forward.
+                If you want to support this study financially, I would welcome
+                a conversation about sponsorship, a grant, or support for a
+                specific milestone. The one-page brief is ready to share; a
+                line-item budget and execution plan would follow before a
+                funding commitment.
               </p>
-              <a className="primary" href="mailto:sciencelecturesyt@gmail.com?subject=ONQIVA%20ALS%20research%20support">
-                Discuss research support
+              <a className="primary" href="mailto:sciencelecturesyt@gmail.com?subject=Financial%20support%20for%20ONQIVA%20ALS%20research">
+                Discuss financial support
               </a>
               <a className="funding-download" href="/ONQIVA_ALS_Seed_Study_Brief.pdf" download>
                 Download the one-page research brief (PDF)

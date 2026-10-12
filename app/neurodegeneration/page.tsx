@@ -179,11 +179,12 @@ export default function NeurodegenerationPage() {
           <div className="shell funding-grid">
             <div>
               <div className="kicker">THE FUNDING CASE</div>
-              <h2>Here is the study I am asking partners to support.</h2>
+              <h2>Here is the study I am asking supporters to fund.</h2>
               <p>
-                The next step needs a host lab, a defined budget, and a
-                reproducible assay. The research case brings my previous work
-                together with the milestones and resources this study requires.
+                Financial support would pay for a reproducible assay, human
+                cell comparisons, analysis, and reporting. The research case
+                brings my previous work together with the milestones and
+                resources this study requires.
               </p>
               <a className="primary" href="/funding">
                 See the funding case

@@ -172,11 +172,11 @@ export default function AboutPage() {
             </div>
             <div>
               <p>
-                I am seeking a host lab and seed support for a staged ALS
-                motor-neuron recovery study. A quantitative collaborator can
-                help test whether the proposed measure adds value over a
-                simpler snapshot. The separate NHANES analysis is also open to
-                independent statistical and oncology review.
+                I am seeking financial support for a staged ALS motor-neuron
+                recovery study. A quantitative reviewer would help test whether
+                the proposed measure adds value over a simpler snapshot. The
+                separate NHANES analysis is also open to independent statistical
+                and oncology review.
               </p>
               <a className="primary" href="/funding">
                 Read the funding case

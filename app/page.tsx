@@ -656,11 +656,11 @@ export default function Home() {
             </div>
             <div>
               <p>
-                ONQIVA is seeking a host lab and seed support for a staged ALS
+                ONQIVA is seeking financial supporters for a staged ALS
                 motor-neuron recovery study. The funding case shows the work I
                 have already done, the prediction to test, the milestones, and
-                the resources required. I also welcome independent review of
-                the separate NHANES survivorship analysis.
+                what support would pay for. I also welcome independent review
+                of the separate NHANES survivorship analysis.
               </p>
               <p className="collaboration-boundary">
                 The ALS study is proposed; the published papers and public-data
