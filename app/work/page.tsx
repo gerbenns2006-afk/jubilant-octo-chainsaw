@@ -87,38 +87,34 @@ export default function WorkPage() {
                 </div>
               </li>
               <li>
-                <div className="timeline-date">Pilot · year not recorded</div>
+                <div className="timeline-date">Earlier laboratory work</div>
                 <div>
-                  <span>COMPLETED CULTURE TESTING · ALZHEIMER’S SAMPLES</span>
-                  <h3>Donor-sample cell-culture pilot</h3>
+                  <span>EXPLORATORY · CELL CULTURE</span>
+                  <h3>Early neurodegeneration experiments</h3>
                   <p>
-                    I purchased Alzheimer’s research samples through Sanguine
-                    Bio and completed culture tests. The site records that pilot
-                    work and adds a separate literature-based
-                    forecast; sample-specific measurements are being reconciled
-                    with the original lab record.
+                    Incubator-based culture work helped shape a question about
+                    cellular stress and recovery. The original assay details and
+                    measurements are being reconstructed, so this entry does
+                    not assign a measured effect to those early tests.
                   </p>
                   <div className="timeline-links">
-                    <a href="/cell-work">Read the pilot record and model</a>
-                    <a href="/neurodegeneration">See related research directions</a>
+                    <a href="/neurodegeneration">See the research direction</a>
                   </div>
                 </div>
               </li>
               <li>
                 <div className="timeline-date">In progress</div>
                 <div>
-                  <span>PROPOSED · NEURODEGENERATION</span>
-                  <h3>Recovery timing and later protein seeding</h3>
+                  <span>STUDY DESIGN · NEURODEGENERATION</span>
+                  <h3>Recovery dynamics in ALS cell models</h3>
                   <p>
-                    A testable hypothesis asks whether a cell’s recovery time
-                    between stress events helps predict later protein seeding
-                    beyond protein burden alone. The linked brief proposes a
-                    Parkinson’s-related cell experiment; the idea is not
-                    validated, and no completed outcomes are reported there.
+                    A proposed study asks whether the way motor neurons recover
+                    after a brief stress predicts their response to a second
+                    challenge. Its readouts and comparison groups are defined;
+                    ONQIVA has not reported results from that study.
                   </p>
                   <div className="timeline-links">
-                    <a href="/neurodegeneration">Read the hypothesis</a>
-                    <a href="/cell-work">See the cell-work record</a>
+                    <a href="/neurodegeneration">Read the study design</a>
                   </div>
                 </div>
               </li>
@@ -134,7 +130,7 @@ export default function WorkPage() {
                     will be listed when the lab notes identify them.
                   </p>
                   <div className="timeline-links">
-                    <a href="/cell-work">Open the cell-work record</a>
+                    <a href="/neurodegeneration">Explore the current research question</a>
                   </div>
                 </div>
               </li>

@@ -4,7 +4,6 @@ type SitePage =
   | "modeling"
   | "about"
   | "neuro"
-  | "cellwork"
   | "work"
   | "community";
 
@@ -12,7 +11,6 @@ const links = [
   { label: "Survivorship", href: "/#research-note", section: "research" },
   { label: "Prototype", href: "/#prototype", section: "prototype" },
   { label: "Neurodegeneration", href: "/neurodegeneration", section: "neuro" },
-  { label: "Cell work", href: "/cell-work", section: "cellwork" },
   { label: "Other work", href: "/work", section: "work" },
   { label: "Community", href: "/community", section: "community" },
   { label: "Methods", href: "/modeling", section: "modeling" },
