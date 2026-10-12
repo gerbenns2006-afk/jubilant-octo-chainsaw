@@ -5,7 +5,8 @@ type SitePage =
   | "about"
   | "neuro"
   | "work"
-  | "community";
+  | "community"
+  | "funding";
 
 const links = [
   { label: "Survivorship", href: "/#research-note", section: "research" },
@@ -35,8 +36,8 @@ export default function SiteNav({ active }: { active: SitePage }) {
           </a>
         ))}
       </div>
-      <a className="nav-cta" href="/#collaborate">
-        Collaborate
+      <a className="nav-cta" href="/funding" aria-current={active === "funding" ? "page" : undefined}>
+        Fund the study
       </a>
     </nav>
   );

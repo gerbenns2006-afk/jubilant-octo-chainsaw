@@ -651,26 +651,23 @@ export default function Home() {
         <section className="work-with-us" id="collaborate">
           <div className="shell work-grid">
             <div>
-              <div className="kicker">A SPECIFIC ASK</div>
-              <h2>Help review the question before the platform grows.</h2>
+              <div className="kicker">SUPPORT THE NEXT STUDY</div>
+              <h2>My research record now points to a testable next step.</h2>
             </div>
             <div>
               <p>
-                I am looking for an independent statistical reviewer to examine
-                the NHANES cohort and model, and an oncology or survivorship
-                collaborator to help define a responsible research question. I
-                am also open to conversations with nonprofit and philanthropic
-                funders who support early, transparent research.
+                ONQIVA is seeking a host lab and seed support for a staged ALS
+                motor-neuron recovery study. The funding case shows the work I
+                have already done, the prediction to test, the milestones, and
+                the resources required. I also welcome independent review of
+                the separate NHANES survivorship analysis.
               </p>
               <p className="collaboration-boundary">
-                The site does not claim a formal clinic partnership, funded
-                pilot, or clinical deployment.
+                The ALS study is proposed; the published papers and public-data
+                analysis are completed work.
               </p>
-              <a
-                className="primary"
-                href="mailto:sciencelecturesyt@gmail.com?subject=ONQIVA%20research%20review"
-              >
-                Request a methods review
+              <a className="primary" href="/funding">
+                Read the funding case
               </a>
             </div>
           </div>

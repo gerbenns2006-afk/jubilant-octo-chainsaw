@@ -3614,3 +3614,192 @@ body {
   color: var(--mint);
   overflow-wrap: anywhere;
 }
+
+/* Funding case */
+.funding-hero {
+  padding-bottom: var(--space-10);
+}
+.funding-status {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-6);
+  margin-top: var(--space-8);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--line);
+  color: var(--green-text);
+  font-size: var(--type-xs);
+  font-weight: var(--weight-semibold);
+}
+.funding-status span::before {
+  display: inline-block;
+  width: 0.4rem;
+  height: 0.4rem;
+  margin-right: var(--space-2);
+  border-radius: var(--radius-round);
+  background: var(--green-muted);
+  content: "";
+  vertical-align: middle;
+}
+.funding-record,
+.funding-thesis,
+.funding-milestones,
+.funding-resources,
+.funding-contact {
+  padding: var(--section-space) 0;
+}
+.funding-record {
+  background: var(--pale);
+}
+.funding-record-grid,
+.funding-milestone-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-7);
+}
+.funding-record-grid article,
+.funding-milestone-grid li {
+  padding: var(--space-6);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  background: var(--white);
+}
+.funding-record-grid article > span,
+.funding-milestone-grid li > span,
+.funding-needs span {
+  color: var(--green);
+  font-size: var(--type-micro);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.1em;
+}
+.funding-record-grid h3,
+.funding-milestone-grid h3 {
+  margin: var(--space-3) 0;
+  font-size: var(--type-xl);
+  line-height: var(--leading-tight);
+}
+.funding-record-grid p,
+.funding-milestone-grid p,
+.funding-resources p,
+.funding-contact p {
+  color: var(--green-text);
+  line-height: var(--leading-copy);
+}
+.funding-record-grid a,
+.funding-thesis a {
+  display: block;
+  width: fit-content;
+  margin-top: var(--space-3);
+  color: var(--green);
+  font-size: var(--type-sm);
+  font-weight: var(--weight-bold);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.funding-thesis {
+  background: var(--white);
+}
+.funding-thesis-grid,
+.funding-resources-grid,
+.funding-contact-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: var(--space-10);
+  align-items: start;
+}
+.funding-thesis h2,
+.funding-resources h2,
+.funding-contact h2 {
+  margin: var(--space-3) 0 var(--space-5);
+  font-size: var(--type-section);
+  line-height: var(--leading-tight);
+}
+.funding-thesis p {
+  margin-top: 0;
+  color: var(--green-text);
+  line-height: var(--leading-copy);
+}
+.funding-milestones {
+  background: var(--soft-paper);
+}
+.funding-milestone-grid {
+  padding: 0;
+  list-style: none;
+}
+.funding-milestone-grid li {
+  display: flex;
+  flex-direction: column;
+}
+.funding-milestone-grid strong {
+  display: block;
+  margin-top: auto;
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--line);
+  color: var(--ink);
+  font-size: var(--type-sm);
+  line-height: var(--leading-copy);
+}
+.funding-resources {
+  background: var(--cream);
+}
+.funding-needs {
+  border-top: 1px solid var(--line);
+}
+.funding-needs article {
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+  gap: var(--space-5);
+  padding: var(--space-5) 0;
+  border-bottom: 1px solid var(--line);
+}
+.funding-needs p {
+  margin: 0;
+}
+.funding-contact {
+  background: var(--ink);
+  color: var(--white);
+}
+.funding-contact .kicker {
+  color: var(--mint);
+}
+.funding-contact p {
+  margin-top: 0;
+  color: var(--text-muted-on-dark);
+}
+.funding-contact .primary {
+  margin-top: var(--space-4);
+  background: var(--mint);
+  color: var(--ink);
+}
+.funding-path p {
+  max-width: 30rem;
+  line-height: var(--leading-copy);
+}
+.funding-path .primary {
+  margin-top: var(--space-4);
+}
+@media (max-width: 900px) {
+  .funding-record-grid,
+  .funding-milestone-grid {
+    grid-template-columns: 1fr;
+  }
+  .funding-thesis-grid,
+  .funding-resources-grid,
+  .funding-contact-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+}
+@media (max-width: 600px) {
+  .funding-status {
+    flex-direction: column;
+  }
+  .funding-record-grid article,
+  .funding-milestone-grid li {
+    padding: var(--space-5);
+  }
+  .funding-needs article {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+}
