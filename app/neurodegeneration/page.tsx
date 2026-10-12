@@ -34,7 +34,7 @@ export default function NeurodegenerationPage() {
             <div className="section-head">
               <div>
                 <div className="kicker">TWO CONNECTED, DISTINCT TRACKS</div>
-                <h2>Start from the experiments. Make the next prediction testable.</h2>
+                <h2>Start from the pilot. Make the next prediction testable.</h2>
               </div>
               <p>
                 The Alzheimer’s pilot uses purchased human research material and
@@ -73,13 +73,31 @@ export default function NeurodegenerationPage() {
                   Read the original hypothesis →
                 </a>
               </article>
+              <article className="study-card">
+                <span>PROPOSED · ALS CELL MODEL</span>
+                <h3>TDP-43 stress recovery in NSC-34 cells</h3>
+                <p>
+                  A separate ALS mechanism study can compare wild-type and
+                  ALS-linked TDP-43 in motor-neuron-like NSC-34 cells. The
+                  prediction is that stress-response signals recover differently
+                  after a matched challenge; the result must be measured and
+                  checked in human motor-neuron models later.
+                </p>
+                <a
+                  href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8217991/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Read the primary TDP-43 model study →
+                </a>
+              </article>
             </div>
 
             <aside className="study-boundary">
-              <strong>ALS is a distinct next research direction.</strong>
-              The recovery-timing proposal does not establish an ALS model or
-              ALS finding. Any ALS extension would need its own cell model,
-              outcome, and validation plan.
+              <strong>These are three distinct research tracks.</strong>
+              Alzheimer’s sample work, Parkinson’s protein-seeding questions,
+              and an ALS TDP-43 model use different biology and outcomes. A
+              result in one model does not transfer automatically to another.
             </aside>
           </div>
         </section>

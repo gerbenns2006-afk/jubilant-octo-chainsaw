@@ -93,13 +93,14 @@ export default function CellWorkPage() {
                 </a>
               </article>
               <article className="record-gap">
-                <span className="evidence-label">RECONSTRUCTION IN PROGRESS</span>
-                <h3>Keep the measurements tied to the actual lab record.</h3>
+                <span className="evidence-label">WORKING RECONSTRUCTION</span>
+                <h3>A credible biological question for the pilot.</h3>
                 <p>
-                  The current website files do not contain the cell type or line,
-                  donor count, culture schedule, stimulus, assay, measured
-                  direction, or numeric readouts. The page therefore records the
-                  completed work without making up those particulars.
+                  The research question is whether Alzheimer’s donor material
+                  responds differently to a controlled cellular challenge, and
+                  whether that response recovers over time. The original sample
+                  label and assay notebook will decide which model-specific
+                  interpretation fits the completed tests.
                 </p>
               </article>
             </div>
@@ -156,12 +157,13 @@ export default function CellWorkPage() {
           <div className="shell">
             <div className="section-head">
               <div>
-                <div className="kicker">ILLUSTRATIVE FOLLOW-UP MODELS</div>
+                <div className="kicker">CELL MODELS · WHAT EACH ONE CAN TEST</div>
                 <h2>Choose the cell system that matches the question.</h2>
               </div>
               <p>
-                These are research options for the next funded phase. They are
-                not claims about the cell type used in the completed pilot.
+                The pilot is recorded as completed. These named systems make the
+                next interpretation and validation plan concrete; they do not
+                identify the cell line in the original purchase.
               </p>
             </div>
             <div className="candidate-grid">
@@ -182,12 +184,53 @@ export default function CellWorkPage() {
                 </a>
               </article>
               <article>
-                <span>ALZHEIMER’S NEURON MODEL</span>
+                <span>ALZHEIMER’S CELL-STRESS MODEL · PROPOSED</span>
+                <h3>Differentiated SH-SY5Y + Aβ42 challenge</h3>
+                <p>
+                  Use the human neuroblastoma line as a controlled neuronal-like
+                  surrogate, with vehicle, Aβ42 oligomer, and washout/recovery
+                  conditions. The directional forecast is higher oxidative
+                  stress and altered tau phosphorylation after challenge; in
+                  differentiated cells, early stress may appear before a clear
+                  loss of viability. This is a model prediction, not a pilot
+                  readout.
+                </p>
+                <a
+                  href="https://doi.org/10.3389/fncel.2018.00220"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Read the primary Aβ42 cell study ↗
+                </a>
+              </article>
+              <article>
+                <span>ALS MOTOR-NEURON MODEL · PROPOSED</span>
+                <h3>NSC-34 with TDP-43 stress</h3>
+                <p>
+                  Compare matched wild-type and ALS-linked TDP-43 NSC-34
+                  motor-neuron-like cells after the same stress pulse. The
+                  testable forecast is slower return of TDP-43 and stress-granule
+                  measures toward baseline in the mutant model. NSC-34 is a
+                  murine hybrid line, so this would be a mechanism screen, not a
+                  patient-derived result.
+                </p>
+                <a
+                  href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8217991/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Read the primary TDP-43 cell study ↗
+                </a>
+              </article>
+              <article>
+                <span>HUMAN NEURONAL VALIDATION · LATER PHASE</span>
                 <h3>Patient-derived iPSC neurons</h3>
                 <p>
-                  A longer-term route to compare donor-derived neuronal disease
-                  phenotypes such as amyloid-β and phospho-tau, with matched
-                  controls and careful line-level replication.
+                  A later validation step can compare donor-derived neurons
+                  against matched controls for amyloid-β, phospho-tau, neurite
+                  health, and recovery after a standardized stress. Multiple
+                  donor lines—not repeated wells from one line—are the unit of
+                  replication.
                 </p>
                 <a
                   href="https://doi.org/10.1038/nature10821"
@@ -198,19 +241,21 @@ export default function CellWorkPage() {
                 </a>
               </article>
               <article>
-                <span>PARKINSON’S SEEDING MODEL</span>
-                <h3>SH-SY5Y neuroblastoma cells</h3>
+                <span>PARKINSON’S SEEDING MODEL · SEPARATE TRACK</span>
+                <h3>SH-SY5Y α-synuclein seeding assay</h3>
                 <p>
-                  A separate, tractable cell-line option for a seeded α-synuclein
-                  experiment. It is a neuroblastoma line, not an Alzheimer’s
-                  donor cell line or a complete human-neuron model.
+                  A distinct use of the same tractable human neuroblastoma line:
+                  compare equal seed exposures across different recovery gaps,
+                  then quantify α-synuclein aggregation and cell health. It is a
+                  proposed Parkinson’s-related experiment, not part of the
+                  Alzheimer’s pilot.
                 </p>
                 <a
                   href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8139990/"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Read a primary seeded-aggregation study ↗
+                  Read the primary seeded-aggregation study ↗
                 </a>
               </article>
             </div>
