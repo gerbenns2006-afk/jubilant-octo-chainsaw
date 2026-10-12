@@ -66,7 +66,7 @@ export default function Home() {
 
       <div id="main-content">
         <section className="hero shell">
-          <div className="eyebrow">Independent computational oncology</div>
+          <div className="eyebrow">Independent biomedical research</div>
           <h1>
             What can a biomarker
             <br />
@@ -87,8 +87,10 @@ export default function Home() {
             </a>
           </div>
           <div className="hero-proof">
-            <span>515-person public-data analysis</span>
-            <span>Separate fictional clinic simulation</span>
+            <span>515-person survivorship analysis</span>
+            <a href="/cell-work">Alzheimer’s sample work &amp; predictions</a>
+            <span>Neurodegeneration hypothesis</span>
+            <span>Hands-on protein research</span>
           </div>
         </section>
 

@@ -1,8 +1,18 @@
-type SitePage = "prototype" | "research" | "modeling" | "about";
+type SitePage =
+  | "prototype"
+  | "research"
+  | "modeling"
+  | "about"
+  | "neuro"
+  | "cellwork"
+  | "work";
 
 const links = [
+  { label: "Survivorship", href: "/#research-note", section: "research" },
   { label: "Prototype", href: "/#prototype", section: "prototype" },
-  { label: "Research note", href: "/#research-note", section: "research" },
+  { label: "Neurodegeneration", href: "/neurodegeneration", section: "neuro" },
+  { label: "Cell work", href: "/cell-work", section: "cellwork" },
+  { label: "Other work", href: "/work", section: "work" },
   { label: "Methods", href: "/modeling", section: "modeling" },
   { label: "Founder", href: "/about", section: "about" },
 ] as const;

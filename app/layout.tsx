@@ -1,9 +1,9 @@
 import "./styles.css";
 
 export const metadata = {
-  title: "ONQIVA | Vitamin D and Cancer Survivorship Research",
+  title: "ONQIVA | Independent Biomedical Research",
   description:
-    "An independent exploratory analysis of NHANES data, shown beside a separate fictional clinic-allocation simulation.",
+    "A research portfolio spanning cancer survivorship, neurodegeneration hypotheses, cell science, and transparent methods.",
 };
 
 export default function RootLayout({

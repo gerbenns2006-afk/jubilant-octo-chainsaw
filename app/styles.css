@@ -2375,6 +2375,12 @@ body {
   background: var(--green-muted);
   content: "";
 }
+.hero-proof a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--green-muted);
+  text-underline-offset: 0.2em;
+}
 .research-note {
   padding: var(--section-space) 0;
   background: var(--pale);
@@ -2996,4 +3002,268 @@ body {
   .page-hero h1 {
     font-size: clamp(2.5rem, 7vw, 3.75rem);
   }
+}
+
+/* Research portfolio additions */
+.study-overview,
+.pilot-record,
+.source-strip {
+  padding: var(--section-space) 0;
+}
+.study-overview,
+.pilot-record {
+  background: var(--pale);
+}
+.study-grid,
+.record-grid,
+.prediction-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-7);
+}
+.study-card,
+.record-grid article,
+.prediction-grid article {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  padding: var(--space-6);
+  background: var(--white);
+}
+.study-card-featured {
+  background: var(--mint);
+  border-color: var(--mint);
+}
+.study-card > span,
+.prediction-grid article > span {
+  color: var(--green);
+  font-size: var(--type-micro);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.1em;
+}
+.study-card h3,
+.record-grid h3,
+.prediction-grid h3,
+.model-spec h3 {
+  font-size: var(--type-xl);
+  line-height: var(--leading-tight);
+  margin: var(--space-3) 0;
+}
+.study-card p,
+.record-grid p,
+.prediction-grid p,
+.model-spec p,
+.source-strip p {
+  color: var(--green-text);
+  line-height: var(--leading-copy);
+}
+.study-card a,
+.record-grid a,
+.source-strip a:not(.secondary) {
+  display: inline-block;
+  margin-top: var(--space-3);
+  color: var(--green);
+  font-weight: var(--weight-bold);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.study-boundary {
+  margin-top: var(--space-4);
+  padding: var(--space-5);
+  border-left: 4px solid var(--green-muted);
+  background: var(--white);
+  color: var(--green-text);
+  line-height: var(--leading-copy);
+}
+.study-boundary strong {
+  margin-right: var(--space-2);
+  color: var(--ink);
+}
+.record-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.record-grid article {
+  min-height: 100%;
+}
+.record-gap {
+  background: var(--soft-paper) !important;
+}
+.prediction-model .modeling-intro {
+  margin-bottom: var(--space-6);
+}
+.prediction-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: var(--space-7) 0;
+}
+.prediction-grid article {
+  background: var(--green-panel);
+  border-color: var(--green-border);
+  color: var(--white);
+}
+.prediction-grid article > span {
+  color: var(--mint);
+}
+.prediction-grid p {
+  color: var(--text-muted-on-dark);
+  font-size: var(--type-sm);
+}
+.prediction-grid h3 {
+  font-size: var(--type-lg);
+}
+.model-spec {
+  padding: var(--space-6);
+  border: 1px solid var(--green-border);
+  border-radius: var(--radius-card);
+  background: var(--ink);
+}
+.model-spec .evidence-label {
+  color: var(--mint);
+}
+.model-spec h3 {
+  max-width: 760px;
+}
+.model-spec p {
+  color: var(--text-muted-on-dark);
+}
+.model-spec code {
+  display: inline-block;
+  max-width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-control);
+  background: var(--green-panel);
+  color: var(--mint);
+  overflow-wrap: anywhere;
+}
+.funding-path {
+  padding: var(--section-space) 0;
+  background: var(--mint);
+  color: var(--ink);
+}
+.funding-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: var(--space-10);
+  align-items: start;
+}
+.funding-grid h2 {
+  margin-top: var(--space-3);
+  font-size: var(--type-section);
+  line-height: var(--leading-tight);
+}
+.funding-grid ol {
+  margin: 0;
+  padding-left: var(--space-6);
+}
+.funding-grid li {
+  padding: 0 0 var(--space-4) var(--space-2);
+  line-height: var(--leading-copy);
+}
+.source-strip {
+  background: var(--soft-paper);
+}
+.source-strip .source-limit {
+  max-width: 760px;
+  color: var(--muted);
+  font-size: var(--type-sm);
+}
+.source-strip .secondary {
+  margin-top: var(--space-5);
+}
+@media (max-width: 900px) {
+  .record-grid,
+  .prediction-grid,
+  .funding-grid,
+  .candidate-grid,
+  .timing-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .study-grid {
+    grid-template-columns: 1fr;
+  }
+  .study-card,
+  .record-grid article,
+  .prediction-grid article,
+  .candidate-grid article,
+  .model-spec {
+    padding: var(--space-5);
+  }
+}
+.candidate-models {
+  padding: var(--section-space) 0;
+  background: var(--white);
+}
+.candidate-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-7);
+}
+.candidate-grid article {
+  padding: var(--space-6);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  background: var(--soft-paper);
+}
+.candidate-grid article > span {
+  color: var(--green);
+  font-size: var(--type-micro);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.1em;
+}
+.candidate-grid h3 {
+  margin: var(--space-3) 0;
+  font-size: var(--type-xl);
+  line-height: var(--leading-tight);
+}
+.candidate-grid p {
+  color: var(--green-text);
+  font-size: var(--type-sm);
+  line-height: var(--leading-copy);
+}
+.candidate-grid a {
+  display: inline-block;
+  margin-top: var(--space-3);
+  color: var(--green);
+  font-size: var(--type-sm);
+  font-weight: var(--weight-bold);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.timing-model {
+  padding: var(--section-space) 0;
+  background: var(--ink);
+  color: var(--white);
+}
+.timing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-10);
+  align-items: start;
+}
+.timing-grid .kicker {
+  color: var(--mint);
+}
+.timing-grid h2 {
+  margin: var(--space-3) 0 var(--space-5);
+  font-size: var(--type-section);
+  line-height: var(--leading-tight);
+}
+.timing-grid p {
+  color: var(--text-muted-on-dark);
+  line-height: var(--leading-copy);
+}
+.timing-equations {
+  display: grid;
+  gap: var(--space-3);
+}
+.timing-equations code {
+  display: block;
+  padding: var(--space-4);
+  border: 1px solid var(--green-border);
+  border-radius: var(--radius-control);
+  background: var(--green-panel);
+  color: var(--mint);
+  overflow-wrap: anywhere;
 }
