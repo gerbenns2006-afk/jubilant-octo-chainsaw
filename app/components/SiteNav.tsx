@@ -14,7 +14,7 @@ const links = [
   { label: "Neurodegeneration", href: "/neurodegeneration", section: "neuro" },
   { label: "Cell work", href: "/cell-work", section: "cellwork" },
   { label: "Other work", href: "/work", section: "work" },
-  { label: "Community", href: "/#community", section: "community" },
+  { label: "Community", href: "/community", section: "community" },
   { label: "Methods", href: "/modeling", section: "modeling" },
   { label: "Founder", href: "/about", section: "about" },
 ] as const;
