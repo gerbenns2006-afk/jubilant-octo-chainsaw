@@ -3776,6 +3776,16 @@ body {
   background: var(--mint);
   color: var(--ink);
 }
+.funding-download {
+  display: block;
+  width: fit-content;
+  margin-top: var(--space-5);
+  color: var(--mint);
+  font-size: var(--type-sm);
+  font-weight: var(--weight-bold);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
 .funding-path p {
   max-width: 30rem;
   line-height: var(--leading-copy);

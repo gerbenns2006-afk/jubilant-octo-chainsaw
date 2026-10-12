@@ -232,6 +232,9 @@ export default function FundingPage() {
               <a className="primary" href="mailto:sciencelecturesyt@gmail.com?subject=ONQIVA%20ALS%20research%20support">
                 Discuss research support
               </a>
+              <a className="funding-download" href="/ONQIVA_ALS_Seed_Study_Brief.pdf" download>
+                Download the one-page research brief (PDF)
+              </a>
             </div>
           </div>
         </section>
