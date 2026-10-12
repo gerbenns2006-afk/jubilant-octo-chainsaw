@@ -99,6 +99,11 @@ export default function NeurodegenerationPage() {
               and an ALS TDP-43 model use different biology and outcomes. A
               result in one model does not transfer automatically to another.
             </aside>
+            <p className="study-model-link">
+              <a href="/cell-work#reaction-diffusion">
+                See how the cell-culture question becomes a reaction–diffusion model →
+              </a>
+            </p>
           </div>
         </section>
       </div>

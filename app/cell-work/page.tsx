@@ -289,6 +289,118 @@ export default function CellWorkPage() {
           </div>
         </section>
 
+        <section className="reaction-model-section" id="reaction-diffusion">
+          <div className="shell">
+            <div className="section-head reaction-section-head">
+              <div>
+                <div className="kicker">FROM CELL PILOT TO MODEL · PROPOSED</div>
+                <h2>How a measured cell response becomes a reaction–diffusion question.</h2>
+              </div>
+              <p>
+                The completed incubator-based pilot motivates a controlled
+                challenge-and-recovery study. A reaction–diffusion model is the
+                next step: it separates local protein amplification from
+                clearance and spatial spread. The pilot notes we have do not
+                identify the original cell line or supply a time-series, so this
+                is a sample model—not a fit to the completed tests.
+              </p>
+            </div>
+
+            <div className="reaction-steps">
+              <article>
+                <span>01 · START WITH THE CULTURE</span>
+                <h3>Apply the same pulse to matched cultures.</h3>
+                <p>
+                  Choose one disease-specific protein target and cell system.
+                  Compare vehicle, one standardized seed pulse, and repeat
+                  pulses after short or long recovery gaps.
+                </p>
+              </article>
+              <article>
+                <span>02 · MEASURE OVER TIME</span>
+                <h3>Track burden, recovery, and cell health.</h3>
+                <p>
+                  Collect repeated time points for the selected marker, soluble
+                  and aggregated fractions where appropriate, and viability.
+                  Spatial imaging or separated compartments are needed to
+                  estimate spread.
+                </p>
+              </article>
+              <article>
+                <span>03 · FIT AND TRY TO BREAK IT</span>
+                <h3>Estimate parameters, then predict held-out wells.</h3>
+                <p>
+                  Fit a subset of doses and time points. Test whether the model
+                  predicts an unseen recovery gap and independent replicate
+                  plates better than a simple no-spread baseline.
+                </p>
+              </article>
+            </div>
+
+            <div className="reaction-equation-card">
+              <div>
+                <span className="evidence-label">MINIMAL SAMPLE MODEL · NOT CALIBRATED</span>
+                <h3>Local reaction plus spatial spread</h3>
+                <code>
+                  ∂P/∂t = D∇²P + αP(1 − P/K) − μP + I(x,t)
+                </code>
+                <p>
+                  P is the measured burden of one selected misfolded protein.
+                  The equation is a compact Fisher–KPP-style starting point;
+                  it is not a molecular account of every Alzheimer’s, ALS, or
+                  Parkinson’s pathway.
+                </p>
+              </div>
+              <div className="reaction-parameters">
+                <p><strong>D</strong><span>effective spatial spread; needs spatial data</span></p>
+                <p><strong>α</strong><span>local templated amplification</span></p>
+                <p><strong>K</strong><span>saturation level in the model</span></p>
+                <p><strong>μ</strong><span>clearance or loss rate</span></p>
+                <p><strong>I(x,t)</strong><span>timed experimental seed pulse</span></p>
+              </div>
+            </div>
+
+            <div className="reaction-example">
+              <div>
+                <div className="kicker">ILLUSTRATIVE RECOVERY CALCULATION</div>
+                <h3>Shorter gaps leave more residual signal for the next pulse.</h3>
+                <p>
+                  If clearance follows a first-order half-life, the remaining
+                  signal is P₀ × 2<sup>−Δ/t½</sup>. For arithmetic only, set
+                  t½ = 24 hours; this is a toy value, not a measurement or
+                  biological estimate from the pilot.
+                </p>
+              </div>
+              <div className="reaction-example-values">
+                <article><span>24-HOUR GAP</span><strong>50%</strong><small>of starting signal remains in the toy example</small></article>
+                <article><span>72-HOUR GAP</span><strong>12.5%</strong><small>of starting signal remains in the toy example</small></article>
+              </div>
+            </div>
+
+            <div className="reaction-model-boundary">
+              <strong>What this predicts—and what it does not</strong>
+              <p>
+                When amplification exceeds clearance (α &gt; μ), the idealized
+                model predicts a growing front with speed c ≈ 2√(D(α − μ));
+                when clearance dominates, the seeded signal fades. This is a
+                cell-model forecast only. A pooled plate-reader value cannot
+                identify D, and no parameter here predicts a person’s disease
+                course.
+              </p>
+              <p className="reaction-sources">
+                Model precedent:{" "}
+                <a href="https://doi.org/10.1016/j.jmps.2018.10.013" target="_blank" rel="noreferrer">
+                  a Fisher–KPP-style protein growth and spread model ↗
+                </a>
+                {" · "}
+                <a href="https://doi.org/10.1038/s41467-020-15701-2" target="_blank" rel="noreferrer">
+                  human tau-spread modeling against tau-PET ↗
+                </a>
+              </p>
+            </div>
+          </div>
+        </section>
+
         <section className="funding-path">
           <div className="shell funding-grid">
             <div>
