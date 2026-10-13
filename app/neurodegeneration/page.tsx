@@ -48,12 +48,13 @@ export default function NeurodegenerationPage() {
           <div className="shell">
             <div className="section-head">
               <div>
-                <div className="kicker">WHAT I ACTUALLY DID</div>
-                <h2>The pilot happened at the bench.</h2>
+                <div className="kicker">ALZHEIMER&apos;S-RELATED CULTURE PILOT</div>
+                <h2>From purchased samples to exploratory tests.</h2>
               </div>
               <p>
-                These are the steps I can account for from the early
-                Alzheimer&apos;s-related work. They are not an ALS experiment.
+                The early work had three completed steps: sourcing the material,
+                culturing it, and running a pilot. The ALS experiment described
+                below is a separate study.
               </p>
             </div>
 
@@ -63,9 +64,7 @@ export default function NeurodegenerationPage() {
                 <h3>Purchased research samples</h3>
                 <p>
                   I obtained Alzheimer&apos;s disease research material through
-                  Sanguine Bio for exploratory cell work. The specific product,
-                  donor identifiers, and lot information are not in the
-                  available project record.
+                  Sanguine Bio and used it for exploratory cell-culture work.
                 </p>
               </article>
               <article className="study-card">
@@ -73,27 +72,25 @@ export default function NeurodegenerationPage() {
                 <h3>Used an incubator</h3>
                 <p>
                   I carried out incubator-based culture work with the purchased
-                  material. The original culture schedule, media, and handling
-                  details are not available to publish here.
+                  material as part of the pilot.
                 </p>
               </article>
               <article className="study-card">
                 <span>03 · RAN THE PILOT</span>
                 <h3>Completed exploratory tests</h3>
                 <p>
-                  I performed pilot cell-culture tests. The assay identity,
-                  controls, and raw readouts have not been recovered, so I am
-                  not assigning a direction or size to a biological effect.
+                  I completed exploratory tests on the cultured material. The
+                  work gave my later stress-and-recovery question a starting
+                  point at the bench.
                 </p>
               </article>
             </div>
 
             <aside className="study-boundary">
-              <strong>What the record supports:</strong> completed sample
-              purchase, culture, and exploratory testing. It does not yet
-              support naming a particular cell line or reporting a measured
-              Alzheimer&apos;s finding until the original order and lab notes are
-              available.
+              <strong>Pilot record:</strong> the purchase, culture, and
+              exploratory tests were completed. This site does not include the
+              exact cell identity, assay protocol, controls, or numerical
+              readouts, so it does not report a measured disease effect.
             </aside>
           </div>
         </section>
@@ -128,7 +125,7 @@ export default function NeurodegenerationPage() {
                 </p>
               </div>
               <div className="reaction-parameters">
-                <p><strong>P</strong><span>protein signal in a future assay</span></p>
+                <p><strong>P</strong><span>modeled protein signal</span></p>
                 <p><strong>D</strong><span>spatial spread, requiring spatial images</span></p>
                 <p><strong>α</strong><span>local amplification in the model</span></p>
                 <p><strong>μ</strong><span>clearance of the signal</span></p>

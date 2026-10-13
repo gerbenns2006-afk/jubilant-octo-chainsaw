@@ -73,6 +73,20 @@ export default function AboutPage() {
                 </div>
               </li>
               <li>
+                <div className="timeline-date">Earlier pilot</div>
+                <div>
+                  <span>ALZHEIMER&apos;S-RELATED CELL CULTURE</span>
+                  <h3>Purchased samples and ran exploratory tests</h3>
+                  <p>
+                    I obtained research material through Sanguine Bio, cultured
+                    it using an incubator, and completed exploratory tests. The
+                    bench work shaped a separate question about cellular stress
+                    and recovery.
+                  </p>
+                  <a href="/neurodegeneration#pilot-record">See the pilot work</a>
+                </div>
+              </li>
+              <li>
                 <div className="timeline-date">2026</div>
                 <div>
                   <span>INDEPENDENT ANALYSIS</span>
@@ -112,8 +126,8 @@ export default function AboutPage() {
                   <p>
                     The next step is feedback on the cohort, model choices, and
                     limits. A clinical pilot would need a partner, a defined
-                    protocol, appropriate data, and validation. No pilot or
-                    clinic deployment is underway.
+                    protocol, appropriate data, and validation. No clinical
+                    pilot or clinic deployment is underway.
                   </p>
                 </div>
               </li>

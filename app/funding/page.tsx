@@ -82,10 +82,11 @@ export default function FundingPage() {
                 <h3>Experience at the bench</h3>
                 <p>
                   At the University of Miami, I worked hands-on with proteins,
-                  data, and scientific writing. Earlier incubator-based culture
-                  work helped me think about cell stress. Its original assay
-                  records are being reconstructed, so no cell-line result from
-                  that work is claimed here.
+                  data, and scientific writing. I also purchased
+                  Alzheimer&apos;s-related research material through Sanguine Bio,
+                  cultured it using an incubator, and completed exploratory
+                  tests. That pilot led me to ask sharper questions about cell
+                  stress and recovery.
                 </p>
                 <a href="/work">See the research record</a>
               </article>

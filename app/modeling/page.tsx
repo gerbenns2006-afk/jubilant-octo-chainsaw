@@ -197,8 +197,9 @@ export default function ModelingPage() {
               <p>
                 The next work is independent statistical review, clearer
                 uncertainty analysis, and a carefully defined research question.
-                Molecular data and clinical pilot work remain future
-                possibilities, not current product features.
+                Molecular analysis and a clinical pilot would be separate from
+                the completed exploratory culture work; neither is a current
+                product feature.
               </p>
               <a className="primary" href="/#collaborate">
                 Request a methods review

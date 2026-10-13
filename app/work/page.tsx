@@ -18,9 +18,9 @@ export default function WorkPage() {
             <em>proteins, and mathematical questions.</em>
           </h1>
           <p className="hero-copy">
-            A growing record of published research, independent analysis, and
-            hypotheses in progress. Each item states what was done and what
-            remains open.
+            Published papers, independent analysis, and laboratory work led to
+            the questions ONQIVA studies now. Follow the work from the bench
+            and the research record into the models on this site.
           </p>
         </section>
 
@@ -92,10 +92,10 @@ export default function WorkPage() {
                   <span>EXPLORATORY · CELL CULTURE</span>
                   <h3>Early neurodegeneration experiments</h3>
                   <p>
-                    Incubator-based culture work helped shape a question about
-                    cellular stress and recovery. The original assay details and
-                    measurements are being reconstructed, so this entry does
-                    not assign a measured effect to those early tests.
+                    I purchased Alzheimer&apos;s-related research material through
+                    Sanguine Bio, cultured it using an incubator, and completed
+                    exploratory cell-culture tests. That hands-on work shaped
+                    my later question about cellular stress and recovery.
                   </p>
                   <div className="timeline-links">
                     <a href="/neurodegeneration#pilot-record">See the completed pilot</a>
@@ -126,8 +126,8 @@ export default function WorkPage() {
                   <p>
                     Research training at the University of Miami included
                     hands-on protein work, data analysis, and scientific
-                    writing. Specific cell lines and experimental findings
-                    will be listed when the lab notes identify them.
+                    writing. Those skills carried into my independent analysis
+                    and the models I developed for ONQIVA.
                   </p>
                   <div className="timeline-links">
                     <a href="/neurodegeneration">Explore the current research question</a>

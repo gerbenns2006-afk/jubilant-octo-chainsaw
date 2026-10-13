@@ -636,10 +636,9 @@ export default function Home() {
             </div>
             <div>
               <p>
-                See how ONQIVA plans to make study boundaries visible, teach
-                the methods, and build future research questions with the
-                community. This is an invitation for the next stage, not a
-                claim that a formal partnership already exists.
+                See how ONQIVA shows who was studied, explains the methods in
+                plain language, and brings community questions into the
+                research conversation.
               </p>
               <a className="primary" href="/community">
                 Explore the community approach
@@ -663,8 +662,9 @@ export default function Home() {
                 of the separate NHANES survivorship analysis.
               </p>
               <p className="collaboration-boundary">
-                The ALS study is proposed; the published papers and public-data
-                analysis are completed work.
+                Published papers, exploratory culture work, and public-data
+                analysis form the completed record. The ALS experiment is the
+                next study seeking support.
               </p>
               <a className="primary" href="/funding">
                 Read the funding case
