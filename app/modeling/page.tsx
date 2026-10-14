@@ -3,6 +3,9 @@ import SiteNav from "../components/SiteNav";
 import model from "../../public/data/nhanes_model.json";
 
 export default function ModelingPage() {
+  const { coefficients, means } = model.cox;
+  const vitaminDCoefficient = coefficients.vitamin_d_per_10;
+
   return (
     <main id="top">
       <a className="skip-link" href="#methods-content">
@@ -14,14 +17,14 @@ export default function ModelingPage() {
         <section className="page-hero modeling-hero shell">
           <div className="eyebrow">Methods and evidence</div>
           <h1>
-            Three calculations.
+            The calculation
             <br />
-            <em>Three different meanings.</em>
+            <em>behind 0.69.</em>
           </h1>
           <p className="hero-copy">
-            ONQIVA includes an exploratory survival analysis, a cross-sectional
-            prediction benchmark, and a fictional testing-allocation simulation.
-            They use different data and answer different questions.
+            The fitted equation, the measured data behind it, and the limit of
+            what it can say. The prediction benchmark and clinic simulation
+            appear below as separate exercises.
           </p>
         </section>
 
@@ -29,7 +32,7 @@ export default function ModelingPage() {
           <div className="shell">
             <div className="modeling-intro">
               <div>
-                <div className="kicker">01 · SURVIVAL ANALYSIS</div>
+                <div className="kicker">01 · COMPLETED ANALYSIS</div>
                 <h2>Measured vitamin D and short-term outcomes.</h2>
               </div>
               <p>
@@ -41,36 +44,85 @@ export default function ModelingPage() {
               </p>
             </div>
 
-            <div className="methods-result">
-              <article>
-                <span>MODEL</span>
-                <h3>Age-, sex-, and vitamin-D-adjusted Cox regression</h3>
+            <article className="derivation-sheet" id="worked-equation">
+              <div className="derivation-topline">
+                <span>ONQIVA / RESEARCH NOTE 01</span>
+                <span>FITTED TO PUBLIC DATA</span>
+              </div>
+              <div className="derivation-heading">
+                <h3>Hold age and recorded sex fixed. Change the measured value.</h3>
                 <p>
-                  Vitamin D is entered as a continuous measurement, scaled per
-                  10 ng/mL. The interactive curve shows a scenario from this
-                  fitted model. It does not estimate a person’s future.
+                  That comparison isolates the vitamin D term in the fitted Cox
+                  model. It is the calculation behind the result on the home
+                  page.
                 </p>
-                <code>
-                  h(t | x) = h₀(t) exp(β₁ age + β₂ sex + β₃ 25(OH)D / 10)
-                </code>
-              </article>
-              <article>
-                <span>ESTIMATE FROM THIS SAMPLE</span>
-                <div className="methods-estimate">
-                  <strong>{model.cox.vitamin_d_hr_per_10_ng_ml}</strong>
-                  <small>
-                    HR per +10 ng/mL · 95% CI{" "}
-                    {model.cox.vitamin_d_hr_ci95[0].toFixed(2)} to{" "}
-                    {model.cox.vitamin_d_hr_ci95[1].toFixed(2)}
-                  </small>
+              </div>
+
+              <div className="derivation-step">
+                <span className="derivation-number">01</span>
+                <div>
+                  <h4>Put the assay on the model scale</h4>
+                  <p>
+                    NHANES reports total 25(OH)D in nmol/L. The analysis
+                    converted it to ng/mL, then used one unit for each 10
+                    ng/mL.
+                  </p>
+                  <code>D ≈ LBXVIDMS ÷ 2.5 &nbsp;·&nbsp; u = D ÷ 10</code>
+                </div>
+              </div>
+
+              <div className="derivation-step">
+                <span className="derivation-number">02</span>
+                <div>
+                  <h4>Write out the fitted equation</h4>
+                  <p>
+                    Here a is age in years, s is 1 when sex was recorded as
+                    female and 0 otherwise, and h₀(t) is the model&apos;s baseline
+                    hazard. The centered values and coefficients come from the
+                    saved fit; numbers below are rounded for display.
+                  </p>
+                  <div className="derivation-equations">
+                    <code>h(t | a, s, D) = h₀(t) × exp(η)</code>
+                    <code className="derivation-expanded">
+                      <span>η = {coefficients.age.toFixed(4)}(a − {means.age.toFixed(2)})</span>
+                      <span>− {Math.abs(coefficients.female).toFixed(4)}(s − {means.female.toFixed(3)})</span>
+                      <span>− {Math.abs(vitaminDCoefficient).toFixed(4)}(u − {means.vitamin_d_per_10.toFixed(3)})</span>
+                    </code>
+                  </div>
+                </div>
+              </div>
+
+              <div className="derivation-step">
+                <span className="derivation-number">03</span>
+                <div>
+                  <h4>Take the like-for-like ratio</h4>
+                  <p>
+                    At the same age and recorded sex, those terms cancel. A
+                    10 ng/mL difference changes u by one, leaving only the
+                    vitamin D coefficient.
+                  </p>
+                  <div className="derivation-equations">
+                    <code>HR(ΔD | same a, s) = exp({vitaminDCoefficient.toFixed(4)} × ΔD/10)</code>
+                    <code>HR(+10) = exp({vitaminDCoefficient.toFixed(4)}) = {model.cox.vitamin_d_hr_per_10_ng_ml.toFixed(3)}</code>
+                  </div>
+                </div>
+              </div>
+
+              <div className="derivation-answer">
+                <div>
+                  <span>ESTIMATE IN THIS SAMPLE</span>
+                  <strong>{model.cox.vitamin_d_hr_per_10_ng_ml.toFixed(3)}</strong>
                 </div>
                 <p>
-                  The estimate describes an association in this sample. It
-                  cannot establish cause, treatment benefit, or who should be
-                  tested.
+                  Hazard ratio per +10 ng/mL of measured 25(OH)D.
+                  The 95% confidence interval is{" "}
+                  {model.cox.vitamin_d_hr_ci95[0].toFixed(2)}–{model.cox.vitamin_d_hr_ci95[1].toFixed(2)}.
+                  This is a relative hazard estimate inside an observational
+                  model, not an absolute survival gain or the effect of a test
+                  or supplement.
                 </p>
-              </article>
-            </div>
+              </div>
+            </article>
 
             <div className="methods-caveat">
               <strong>Limits that change how to read this result</strong>
@@ -92,6 +144,20 @@ export default function ModelingPage() {
               >
                 Inspect the analysis code ↗
               </a>
+              <a
+                href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/VID_J.htm"
+                target="_blank"
+                rel="noreferrer"
+              >
+                CDC assay record ↗
+              </a>
+              <a
+                href="https://lifelines.readthedocs.io/en/latest/fitters/regression/CoxPHFitter.html"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Cox model form ↗
+              </a>
             </div>
           </div>
         </section>
@@ -100,7 +166,7 @@ export default function ModelingPage() {
           <div className="shell">
             <div className="modeling-intro">
               <div>
-                <div className="kicker">02 · CROSS-SECTIONAL BENCHMARK</div>
+                <div className="kicker">02 · COMPLETED BENCHMARK</div>
                 <h2>Can demographics predict a measured vitamin D category?</h2>
               </div>
               <p>
@@ -145,7 +211,7 @@ export default function ModelingPage() {
           <div className="shell">
             <div className="modeling-intro">
               <div>
-                <div className="kicker">03 · FICTIONAL SIMULATION</div>
+                <div className="kicker">03 · SIMULATION ONLY</div>
                 <h2>Testing priority is a separate written rule.</h2>
               </div>
               <p>
@@ -190,16 +256,15 @@ export default function ModelingPage() {
         <section className="modeling-next">
           <div className="shell work-grid">
             <div>
-              <div className="kicker">WHAT IS NOT BUILT YET</div>
-              <h2>Validation comes before a clinical claim.</h2>
+              <div className="kicker">QUESTION LEFT OPEN</div>
+              <h2>Would a testing workflow help anyone?</h2>
             </div>
             <div>
               <p>
-                The next work is independent statistical review, clearer
-                uncertainty analysis, and a carefully defined research question.
-                Molecular analysis and a clinical pilot would be separate from
-                the completed exploratory culture work; neither is a current
-                product feature.
+                The hazard ratio above does not answer that. Independent
+                statistical review, uncertainty analysis, and a defined
+                clinical study would be needed to examine the value of testing.
+                The completed cell culture pilot is a separate line of work.
               </p>
               <a className="primary" href="/#collaborate">
                 Request a methods review

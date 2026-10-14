@@ -88,7 +88,7 @@ export default function Home() {
           </div>
           <div className="hero-proof">
             <span>515-person survivorship analysis</span>
-            <a href="/neurodegeneration">Neurodegeneration pilot and next study</a>
+            <a href="/neurodegeneration#model-we-developed">Neurodegeneration hypotheses and models</a>
             <span>Hands-on protein research</span>
           </div>
         </section>
@@ -166,7 +166,7 @@ export default function Home() {
                   vitamin D caused the observed difference, that supplements
                   improve survival, or that testing should be ordered.
                 </p>
-                <a href="/modeling">See the methods and source trail</a>
+                <a href="/modeling#worked-equation">See the full calculation and sources</a>
               </aside>
             </div>
 
