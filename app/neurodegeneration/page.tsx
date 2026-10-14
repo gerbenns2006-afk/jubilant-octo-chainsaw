@@ -4,7 +4,7 @@ import SiteNav from "../components/SiteNav";
 export const metadata = {
   title: "Neurodegeneration work | ONQIVA",
   description:
-    "The completed Alzheimer’s culture pilot, working recovery hypothesis, sample equations, and separate ALS study proposed next.",
+    "The completed Alzheimer’s sample-culture pilot, the recovery-history model it motivated, and the separate ALS study proposed next.",
 };
 
 export default function NeurodegenerationPage() {
@@ -34,7 +34,7 @@ export default function NeurodegenerationPage() {
               See what I did
             </a>
             <a className="secondary" href="#model-we-developed">
-              See the hypotheses and models
+              See the model it led to
             </a>
           </div>
           <div className="modeling-status" aria-label="Work status">
@@ -99,97 +99,119 @@ export default function NeurodegenerationPage() {
           <div className="shell">
             <div className="section-head reaction-section-head">
               <div>
-                <div className="kicker">HYPOTHESES &amp; SAMPLE MODELS</div>
-                <h2>What the pilot made me ask.</h2>
+                <div className="kicker">WHAT I BUILT FROM THE QUESTION</div>
+                <h2>I turned recovery time into a testable model.</h2>
               </div>
               <p>
-                After the culture work, I framed a question about recovery:
-                could the time between two challenges change how a cell
-                responds to the second one? The completed pilot supplied the
-                bench starting point. The equations below are the working
-                hypothesis, not measured effects from those samples.
+                After the pilot, I developed a separate hypothesis about how
+                the time between two stress events might change a later cell
+                response. The original example concerned protein seeding in a
+                Parkinson&apos;s-related model. It was conceptual work, not an
+                outcome measured in the Alzheimer&apos;s samples.
               </p>
             </div>
 
-            <div className="hypothesis-notebook">
-              <div className="hypothesis-notebook-head">
-                <span>RESEARCH NOTE / 01</span>
-                <span>WORKING MODEL · NO PILOT PARAMETERS FITTED</span>
+            <div className="reaction-equation-card">
+              <div>
+                <span className="evidence-label">MODEL DRAFT · NOT FITTED TO PILOT DATA</span>
+                <h3>Reaction, clearance, and spread</h3>
+                <code>∂P/∂t = D∇²P + αP(1 − P/K) − μP + I(x,t)</code>
+                <p>
+                  I sketched this reaction–diffusion model to make the idea
+                  precise. It treats a selected protein signal as something
+                  that can spread, amplify, and clear while an experimental
+                  pulse adds new input. No parameter in this equation was
+                  estimated from the completed culture pilot.
+                </p>
+              </div>
+              <div className="reaction-parameters">
+                <p><strong>P</strong><span>modeled protein signal</span></p>
+                <p><strong>D</strong><span>spatial spread, requiring spatial images</span></p>
+                <p><strong>α</strong><span>local amplification in the model</span></p>
+                <p><strong>μ</strong><span>clearance of the signal</span></p>
+                <p><strong>I(x,t)</strong><span>timed experimental input</span></p>
+              </div>
+            </div>
+
+            <div className="reaction-model-boundary">
+              <strong>The prediction I wrote down:</strong>
+              <p>
+                With the same total challenge, a shorter recovery interval
+                could leave more residual signal and change the response to a
+                second pulse. The proposed comparison would need matched
+                cultures and repeated measurements. The pilot did not test or
+                validate that prediction.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="hypotheses-section" id="hypotheses-and-sample-models">
+          <div className="shell">
+            <div className="hypotheses-heading">
+              <div>
+                <div className="kicker">HYPOTHESES SO FAR / SAMPLE MODELS</div>
+                <h2>Could recovery time change the second response?</h2>
+              </div>
+              <p>
+                The completed culture pilot gave this question a starting point
+                at the bench. Here is a mathematical version of the hypothesis:
+                keep the total challenge the same, but change the time between
+                two pulses. These equations are a model to test, not measurements
+                fitted from the pilot.
+              </p>
+            </div>
+
+            <div className="hypotheses-note">
+              <div className="hypotheses-note-header">
+                <span>WORKING NOTE 01 · RECOVERY INTERVAL</span>
+                <span>MODEL PARAMETERS NOT YET MEASURED</span>
               </div>
 
-              <div className="hypothesis-thesis">
-                <span>THE HYPOTHESIS</span>
-                <h3>Recovery time may carry information that a single snapshot misses.</h3>
+              <div className="hypotheses-note-lead">
+                <span>THE IDEA</span>
+                <div>
+                  <h3>A cell may carry a trace of the first pulse into the second.</h3>
+                  <p>
+                    If some signal remains when the second pulse arrives, the
+                    gap between pulses could matter even when the total input
+                    is identical.
+                  </p>
+                </div>
+              </div>
+
+              <div className="hypotheses-formula">
+                <span>01 / SIGNAL LEFT BEFORE PULSE TWO</span>
+                <code>R(Δ) = R₀e<sup>−kΔ</sup></code>
                 <p>
-                  Keep the total challenge the same. Change only the interval
-                  between two pulses. If a signal from the first pulse has not
-                  cleared, the second response may depend on that interval.
+                  Δ is the recovery interval. R₀ is the modeled signal after
+                  pulse one, and k &gt; 0 is an assumed recovery rate. This is a
+                  simple decay assumption, not a measured curve.
                 </p>
               </div>
 
-              <div className="hypothesis-model-row">
-                <div>
-                  <span>01 / RESIDUAL SIGNAL</span>
-                  <code>R(Δ) = R₀e<sup>−kΔ</sup></code>
-                  <p>
-                    R is a signal remaining before pulse two; Δ is the recovery
-                    interval. R₀ is its starting amount and k &gt; 0 is an
-                    assumed clearance rate.
-                  </p>
-                </div>
-                <div>
-                  <span>02 / SECOND RESPONSE</span>
-                  <code>Y₂(Δ) = Y₀ + A + γR(Δ)</code>
-                  <p>
-                    Y₂ is the proposed readout after pulse two. Y₀ is a
-                    baseline, A is the direct pulse response, and γ describes
-                    how residual signal changes it. The sign of γ is unknown.
-                  </p>
-                </div>
+              <div className="hypotheses-formula">
+                <span>02 / RESPONSE AFTER PULSE TWO</span>
+                <code>Y₂(Δ) = Y₀ + A + γR(Δ)</code>
+                <p>
+                  Y₀ is a baseline readout and A is the response to the second
+                  pulse itself. γ describes how the remaining signal changes
+                  that response. Its size and direction are unknown.
+                </p>
               </div>
 
-              <div className="hypothesis-deduction">
-                <span>THE COMPARISON THE MODEL PREDICTS</span>
+              <div className="hypotheses-comparison">
+                <span>THE COMPARISON TO RUN</span>
                 <code>
                   Y₂(Δ<sub>short</sub>) − Y₂(Δ<sub>long</sub>) = γR₀[e<sup>−kΔ<sub>short</sub></sup> − e<sup>−kΔ<sub>long</sub></sup>]
                 </code>
                 <p>
-                  For k &gt; 0, a shorter interval leaves more modeled residual
-                  signal. Whether that raises or lowers the measured second
-                  response depends on γ. An estimate near γ = 0 would give no
-                  support for an interval effect in this simple model.
+                  Under this model, the shorter interval leaves more residual
+                  signal. Whether the second readout goes up or down depends on
+                  γ. Matched cultures and repeated readouts would be needed to
+                  estimate it; the completed pilot did not test this comparison.
                 </p>
               </div>
-            </div>
-
-            <div className="hypothesis-ledger">
-              <div>
-                <span>COMPLETED</span>
-                <p>Purchased Alzheimer&apos;s-related material, incubator culture, and exploratory testing.</p>
-              </div>
-              <div>
-                <span>MODELED</span>
-                <p>A possible recovery mechanism; R₀, k, and γ have no fitted values from the pilot.</p>
-              </div>
-              <div>
-                <span>PROPOSED TEST</span>
-                <p>Matched cultures, equal total challenge, different intervals, controls, and repeated readouts.</p>
-              </div>
-            </div>
-
-            <div className="spatial-extension">
-              <div>
-                <span>SPATIAL EXTENSION / MODEL SKETCH</span>
-                <h3>What if the signal also spreads?</h3>
-                <p>
-                  My earlier reaction–diffusion sketch used a
-                  Parkinson&apos;s-related protein-seeding example. It adds
-                  movement, local amplification, and clearance. It would
-                  require spatial images and a defined protein readout to
-                  estimate its terms; the Alzheimer&apos;s pilot did not fit it.
-                </p>
-              </div>
-              <code>∂P/∂t = D∇²P + αP(1 − P/K) − μP + I(x,t)</code>
             </div>
           </div>
         </section>
