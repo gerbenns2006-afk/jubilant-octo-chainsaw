@@ -25,6 +25,45 @@ export default function ModelingPage() {
           </p>
         </section>
 
+        <section className="modeling-body" id="physics-and-math">
+          <div className="shell">
+            <div className="modeling-intro">
+              <div>
+                <div className="kicker">PHYSICS &amp; MATHEMATICS</div>
+                <h2>Turning biological questions into testable models.</h2>
+              </div>
+              <p>
+                I use physics and mathematics to study how biological systems
+                change over time. Transport, diffusion, reaction rates, and
+                feedback help me describe how substances move, how local
+                interactions develop, and how cells respond to changing conditions.
+              </p>
+            </div>
+            <div className="study-grid">
+              <article className="study-card">
+                <h3>Physics describes the mechanisms</h3>
+                <p>Reaction and transport processes provide a framework for
+                investigating how a signal spreads, accumulates, or clears,
+                and how the timing of stress may affect recovery.</p>
+              </article>
+              <article className="study-card">
+                <h3>Mathematics makes the question precise</h3>
+                <p>Differential equations express change over time. Statistical
+                models quantify associations and uncertainty. Parameter and
+                sensitivity analysis help identify which assumptions most
+                influence a prediction.</p>
+              </article>
+              <article className="study-card">
+                <h3>Experiments guide the next iteration</h3>
+                <p>I connect mathematical modeling, computation, and cell-culture
+                work so experimental observations can inform the models and the
+                models can guide the next experiment. Predictions become
+                research findings only when tested against appropriate data.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
         <section className="modeling-body">
           <div className="shell">
             <div className="modeling-intro">
