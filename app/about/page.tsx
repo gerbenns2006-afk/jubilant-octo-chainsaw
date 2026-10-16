@@ -109,13 +109,13 @@ export default function AboutPage() {
                 <div className="timeline-date">Today</div>
                 <div>
                   <span>PUBLIC PROTOTYPE</span>
-                  <h3>Showing the analysis beside a separate simulation</h3>
+                  <h3>Building an interactive clinic workflow</h3>
                   <p>
-                    ONQIVA puts the real-data analysis next to a fictional,
-                    rule-based testing exercise. The simulation is not trained
-                    on NHANES and is not in clinical use.
+                    ONQIVA brings public-data research and workflow design
+                    into one platform. The interactive prototype uses synthetic
+                    profiles and fixed rules to explore testing allocation.
                   </p>
-                  <a href="/#prototype">Try the fictional workflow</a>
+                  <a href="/#prototype">Explore the prototype</a>
                 </div>
               </li>
               <li>
