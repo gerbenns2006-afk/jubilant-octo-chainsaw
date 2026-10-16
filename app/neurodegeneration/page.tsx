@@ -4,7 +4,7 @@ import SiteNav from "../components/SiteNav";
 export const metadata = {
   title: "Neurodegeneration work | ONQIVA",
   description:
-    "The completed Alzheimer’s sample-culture pilot, the recovery-history model it motivated, and the separate ALS study proposed next.",
+    "The completed PC-12 cell-culture pilot, the recovery-history model it motivated, and the separate ALS study proposed next.",
 };
 
 export default function NeurodegenerationPage() {
@@ -24,9 +24,9 @@ export default function NeurodegenerationPage() {
             <em>in culture.</em>
           </h1>
           <p className="hero-copy">
-            I purchased Alzheimer&apos;s disease research material through
-            Sanguine Bio, cultured it using an incubator, and completed
-            exploratory cell-culture tests. That bench work came before the
+            I independently funded and obtained PC-12 cells (ATCC CRL-1721),
+            carried out incubator-based culture work, and completed
+            exploratory testing. That bench work came before the
             recovery model and the separate ALS study I am now seeking to fund.
           </p>
           <div className="hero-actions">
@@ -48,28 +48,30 @@ export default function NeurodegenerationPage() {
           <div className="shell">
             <div className="section-head">
               <div>
-                <div className="kicker">ALZHEIMER&apos;S-RELATED CULTURE PILOT</div>
-                <h2>From purchased samples to exploratory tests.</h2>
+                <div className="kicker">PC-12 CELL-CULTURE PILOT</div>
+                <h2>From independently funded materials to hands-on neuroscience research.</h2>
               </div>
               <p>
-                The early work had three completed steps: sourcing the material,
-                culturing it, and running a pilot. The ALS experiment described
-                below is a separate study.
+                This pilot connected my computational research with hands-on
+                experimentation and helped shape my subsequent questions about
+                cellular stress and recovery. The ALS study below is the next
+                research direction.
               </p>
             </div>
 
             <div className="study-grid">
               <article className="study-card study-card-featured">
                 <span>01 · SOURCED THE MATERIAL</span>
-                <h3>Purchased research samples</h3>
+                <h3>Independently sourced research material</h3>
                 <p>
-                  I obtained Alzheimer&apos;s disease research material through
-                  Sanguine Bio and used it for exploratory cell-culture work.
+                  I personally funded and obtained PC-12 cells (ATCC CRL-1721)
+                  for exploratory neuroscience research. PC-12 is a rat
+                  pheochromocytoma-derived cell line.
                 </p>
               </article>
               <article className="study-card">
                 <span>02 · CULTURED THE MATERIAL</span>
-                <h3>Used an incubator</h3>
+                <h3>Carried out incubator-based culture</h3>
                 <p>
                   I carried out incubator-based culture work with the purchased
                   material as part of the pilot.
@@ -87,11 +89,31 @@ export default function NeurodegenerationPage() {
             </div>
 
             <aside className="study-boundary">
-              <strong>Pilot record:</strong> the purchase, culture, and
-              exploratory tests were completed. This site does not include the
-              exact cell identity, assay protocol, controls, or numerical
-              readouts, so it does not report a measured disease effect.
+              <strong>Completed pilot:</strong> I independently funded the
+              material acquisition, culture work, and exploratory testing.
+              Specific experimental methods and detailed findings remain private
+              as I develop the next phase of the research.
             </aside>
+          </div>
+        </section>
+
+        <section className="modeling-body">
+          <div className="shell">
+            <div className="modeling-intro">
+              <div>
+                <div className="kicker">WHY THIS MATTERS TO ONQIVA</div>
+                <h2>Connecting mathematical questions with experimental work.</h2>
+              </div>
+              <p>
+                The pilot helped connect the mathematical questions behind
+                ONQIVA with experimental work at the cellular level. That
+                connection guides my research direction: developing models that
+                generate testable questions, then using experimental observations
+                to refine them.
+              </p>
+            </div>
+            <p><a href="/modeling#physics-and-math">Why I integrate physics and mathematics</a></p>
+            <p><a href="https://www.atcc.org/products/crl-1721" target="_blank" rel="noreferrer">PC-12 cell-line reference · ATCC CRL-1721</a></p>
           </div>
         </section>
 
@@ -107,7 +129,7 @@ export default function NeurodegenerationPage() {
                 the time between two stress events might change a later cell
                 response. The original example concerned protein seeding in a
                 Parkinson&apos;s-related model. It was conceptual work, not an
-                outcome measured in the Alzheimer&apos;s samples.
+                outcome measured in the PC-12 pilot.
               </p>
             </div>
 
