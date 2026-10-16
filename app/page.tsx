@@ -80,7 +80,7 @@ export default function Home() {
           </p>
           <div className="hero-actions">
             <a className="primary" href="#prototype">
-              Try the fictional workflow
+              Explore the prototype
             </a>
             <a className="secondary" href="#research-note">
               Read the NHANES analysis
@@ -201,14 +201,14 @@ export default function Home() {
           <div className="shell">
             <div className="section-head">
               <div>
-                <div className="kicker">A SEPARATE PRODUCT EXERCISE</div>
+                <div className="kicker">ONQIVA IN PRACTICE</div>
                 <h2>
-                  Real analysis on one side. Fictional workflow on the other.
+                  From biomarker research to a clinic workflow.
                 </h2>
               </div>
               <p>
-                The clinic scenario below is a rule-based simulation. It does
-                not use the NHANES model, patient records, or clinical outcomes.
+                Explore how patient context and clinic capacity shape a
+                testing workflow in this interactive prototype.
               </p>
             </div>
 
@@ -236,7 +236,7 @@ export default function Home() {
                 >
                   <b>01</b>
                   <span>Cancer survivorship</span>
-                  <small>Explore the fictional clinic workflow.</small>
+                  <small>Explore the clinic workflow prototype.</small>
                 </button>
                 <button
                   className={context === "family" ? "selected" : ""}
@@ -271,7 +271,7 @@ export default function Home() {
                   <article className="patient-card">
                     <div className="card-top">
                       <div>
-                        <span>FICTIONAL SCENARIO</span>
+                        <span>EXAMPLE PATIENT PROFILE</span>
                         <h3>Post-treatment care</h3>
                         <p>
                           Example profile · age 52 · five years after treatment
@@ -297,7 +297,7 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="context">
-                      <b>Fictional clinic context</b>
+                      <b>Example clinic context</b>
                       <p>
                         The clinic has a limited number of confirmatory tests
                         this month. This exercise shows how a written scoring
@@ -318,7 +318,7 @@ export default function Home() {
                             Calculating scenario
                           </>
                         ) : (
-                          "Run fictional allocation"
+                          "Run allocation example"
                         )}
                       </span>
                       <span aria-hidden="true">→</span>
@@ -331,8 +331,9 @@ export default function Home() {
                     ) : null}
                     {error ? <p role="alert">{error}</p> : null}
                     <small className="disclaimer" id="simulation-boundary">
-                      Fictional, rule-based demonstration. It does not estimate
-                      a diagnosis or show clinical benefit.
+                      Prototype using synthetic profiles and fixed rules, separate
+                      from the NHANES analysis. For demonstration, not individual
+                      medical decisions.
                     </small>
                   </article>
 
@@ -342,7 +343,7 @@ export default function Home() {
                   >
                     {!result ? (
                       <div className="empty">
-                        <span className="evidence-label">FICTIONAL OUTPUT</span>
+                        <span className="evidence-label">PROTOTYPE RESULTS</span>
                         <h3>See the rule, then question it.</h3>
                         <p>
                           Run the example to see how its written assumptions
@@ -352,7 +353,7 @@ export default function Home() {
                     ) : (
                       <>
                         <div className="result-label">
-                          FICTIONAL OUTPUT · RULE-BASED
+                          PROTOTYPE RESULTS · RULE-BASED
                         </div>
                         <div className="score-row">
                           <div
@@ -391,7 +392,7 @@ export default function Home() {
                         <div className="next-step">
                           <span>SIMULATION STEP</span>
                           <p>
-                            Place this fictional profile in the example queue.
+                            Place this example profile in the allocation queue.
                           </p>
                         </div>
                       </>
@@ -403,7 +404,7 @@ export default function Home() {
                   <div className="allocation-copy">
                     <div className="kicker">CHANGE ONE ASSUMPTION</div>
                     <h2>
-                      100 fictional profiles.
+                      100 example profiles.
                       <br />
                       <em>{capacity} available tests.</em>
                     </h2>
@@ -440,7 +441,7 @@ export default function Home() {
                     <div
                       className="people"
                       aria-label={
-                        capacity + " of 100 fictional profiles selected"
+                        capacity + " of 100 example profiles selected"
                       }
                     >
                       {Array.from({ length: 100 }, (_, index) => (
@@ -532,12 +533,12 @@ export default function Home() {
         <section className="evidence shell" id="evidence">
           <div className="section-head light-head">
             <div>
-              <div className="kicker">TWO SEPARATE TRACKS</div>
-              <h2>Keep each result in its proper context.</h2>
+              <div className="kicker">RESEARCH & DEVELOPMENT</div>
+              <h2>Explore the evidence behind ONQIVA.</h2>
             </div>
             <p>
-              One analysis uses public survey data. The interactive clinic
-              exercise uses fictional profiles and simulated outcomes.
+              Explore the public-data survivorship analysis and the
+              interactive clinic workflow prototype.
             </p>
           </div>
           <div className="evidence-grid">
@@ -551,12 +552,12 @@ export default function Home() {
               </p>
               <p>
                 The result is observational, unweighted, and based on short
-                follow-up. It is a research finding, not clinical evidence.
+                follow-up. See the methods for interpretation and next steps.
               </p>
               <a href="/modeling">Read the methods</a>
             </article>
             <article className="evidence-card simulated">
-              <div className="status">FICTIONAL DATA · RULE-BASED</div>
+              <div className="status">WORKFLOW PROTOTYPE · RULE-BASED</div>
               <h3>Testing-allocation exercise</h3>
               <p>
                 A separate demonstration asks how a clinic might compare
@@ -564,9 +565,8 @@ export default function Home() {
                 come from NHANES or from a trained clinical predictor.
               </p>
               <p>
-                A real evaluation would need a defined protocol, independent
-                review, appropriate data, and external validation before
-                clinical use could even be considered.
+                The next development stage is a defined evaluation protocol,
+                independent review, and external validation.
               </p>
               <a href="#prototype">Try the example</a>
             </article>
