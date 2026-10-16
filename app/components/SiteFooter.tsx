@@ -9,7 +9,7 @@ export default function SiteFooter() {
           sciencelecturesyt@gmail.com
         </a>
       </p>
-      <p>Exploratory research · Fictional simulation · Not clinical software</p>
+      <p>Independent biomedical research · Open methods · Prototype development</p>
     </footer>
   );
 }
