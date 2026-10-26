@@ -3926,3 +3926,40 @@ body {
     grid-row: auto;
   }
 }
+
+.founder-gofundme {
+  padding: var(--section-space) 0;
+  background: var(--pale);
+  color: var(--ink);
+}
+.founder-gofundme-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: var(--space-10);
+  align-items: start;
+}
+.founder-gofundme h2 {
+  max-width: 16ch;
+  margin: var(--space-3) 0 0;
+  font-size: var(--type-section);
+  line-height: var(--leading-tight);
+}
+.founder-gofundme p {
+  margin-top: 0;
+  color: var(--green-text);
+  line-height: var(--leading-copy);
+}
+.founder-gofundme .primary {
+  display: inline-block;
+  margin-top: var(--space-4);
+}
+.founder-gofundme .founder-gofundme-note {
+  margin: var(--space-4) 0 0;
+  font-size: var(--type-sm);
+}
+@media (max-width: 900px) {
+  .founder-gofundme-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+}

@@ -217,6 +217,36 @@ export default function FundingPage() {
           </div>
         </section>
 
+        <section className="founder-gofundme" id="education-support">
+          <div className="shell founder-gofundme-grid">
+            <div>
+              <div className="kicker">A SEPARATE WAY TO HELP</div>
+              <h2>Support the education behind my research path.</h2>
+            </div>
+            <div>
+              <p>
+                My personal GoFundMe is for the school balance blocking my
+                transcript release and for education and living expenses. I am
+                raising that support separately from the proposed ALS study so
+                contributions intended for research can go toward its research
+                needs.
+              </p>
+              <a
+                className="primary"
+                href="https://www.gofundme.com/f/education-shouldnt-stop-here-help-me-keep-going"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Support my education on GoFundMe ↗
+              </a>
+              <p className="founder-gofundme-note">
+                For support dedicated to the ALS study, use the research contact
+                below.
+              </p>
+            </div>
+          </div>
+        </section>
+
         <section className="funding-contact">
           <div className="shell funding-contact-grid">
             <div>
