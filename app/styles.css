@@ -3624,6 +3624,9 @@ body {
 .funding-hero {
   padding-bottom: var(--space-10);
 }
+.funding-hero .hero-actions {
+  flex-wrap: wrap;
+}
 .funding-status {
   display: flex;
   flex-wrap: wrap;

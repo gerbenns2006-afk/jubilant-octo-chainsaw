@@ -1,6 +1,9 @@
 import SiteFooter from "../components/SiteFooter";
 import SiteNav from "../components/SiteNav";
 
+const educationGoFundMeUrl =
+  "https://www.gofundme.com/f/education-shouldnt-stop-here-help-me-keep-going";
+
 export const metadata = {
   title: "Support the research | ONQIVA",
   description:
@@ -37,6 +40,14 @@ export default function FundingPage() {
             </a>
             <a className="secondary" href="#research-record">
               Inspect the work behind it
+            </a>
+            <a
+              className="secondary"
+              href={educationGoFundMeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GoFundMe · education support ↗
             </a>
           </div>
           <div className="funding-status" aria-label="Research status">
@@ -233,7 +244,7 @@ export default function FundingPage() {
               </p>
               <a
                 className="primary"
-                href="https://www.gofundme.com/f/education-shouldnt-stop-here-help-me-keep-going"
+                href={educationGoFundMeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
               >
